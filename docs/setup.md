@@ -85,6 +85,7 @@ Click the **Account** dropdown and select the new Service Account you created ab
 ![images/2-setup/image12.png](images/2-setup/image12.png)
 
 Click **Next**
+
 ![images/2-setup/image13.png](images/2-setup/image13.png)
 
 
