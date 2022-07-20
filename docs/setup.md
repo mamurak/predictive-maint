@@ -67,7 +67,7 @@ Click **Topics** then **Create Topic**
 
 
 
-Fill it in ***exactly*** as follows, clicking **Next** between selections
+Fill it in ***exactly*** as follows, clicking **Next** between selections and **Finish** at the end
 ```
 Name:		        video-stream
 Partitions:	        10
