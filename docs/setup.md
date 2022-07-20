@@ -89,12 +89,17 @@ Click **Next**
 ![images/2-setup/image13.png](images/2-setup/image13.png)
 
 
-Move to the *Assign permissions* section on the bottom of the window and click **Add permission**
+Move to the *Assign permissions* section on the bottom of the window and click **Add permission** (note click the *Add Permission* text, not the dropdown's arrow)
 ![images/2-setup/image14.png](images/2-setup/image14.png)
 
+Fill in access details as follows:
+![images/2-setup/image15.png](images/2-setup/image15.png)
 
+Now click **Add permission** (this time ***DO*** click the arrow), choose **Produce to a topic** and fill in as below
+Then click **Add permission** (again this time ***DO*** click the arrow), choose **Consume from a topic** and fill in as below
 
-
+This is how your permission assigments should now look. Click **Save**
+![images/2-setup/image16.png](images/2-setup/image16.png)
 
 
 
