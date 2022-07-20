@@ -2,7 +2,7 @@
 
 ## 1 - Download the OpenShift CLI
 
-Navigate to [OpenShift CLI Download Page](https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html). (use the newest version - selectable on the top of the pagen)
+Navigate to [OpenShift CLI Download Page](https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html). (use the newest version - selectable on the top of the page)
 
 Follow the instructions to download the ***oc*** client and add it to your system path.
 
@@ -31,6 +31,16 @@ Click **Create Kafka instance**
 ![images/2-setup/image1-png.png](images/2-setup/image1-png.png)
 
 
+
+
+
+
+
+
+
+
+---
+---
 ## 3 - Setup Client Application to capture real-time images from your webcam
 Now
 
