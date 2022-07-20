@@ -46,7 +46,7 @@ Navigate to **Service Accounts** and click **Create Service Account**
 Give your Service Account a description and click **Create**
 ![images/2-setup/image5.png](images/2-setup/image5.png)
 
-Copy your *Client ID* and your *Client secret* somewhere safe, click the tickbox and click ***Close*
+Copy your *Client ID* and your *Client secret* somewhere safe. We'll refer to these below as YOUR_CLIENT_ID and YOUR_CLIENT_SECRET. Click the tickbox and click ***Close*
 ![images/2-setup/image6.png](images/2-setup/image6.png)
 
 ### Get your Kafka Bootstrap server details
@@ -54,7 +54,7 @@ Copy your *Client ID* and your *Client secret* somewhere safe, click the tickbox
 Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu, then Details: 
 ![images/2-setup/image7.png](images/2-setup/image7.png)
 
-Click the Connection tab and copy your *Bootstrap server*
+Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_BOOTSTRAP_SERVER
 ![images/2-setup/image8.png](images/2-setup/image8.png)
 
 ### Create your Kafka topic
@@ -95,13 +95,21 @@ Move to the *Assign permissions* section on the bottom of the window and click *
 Fill in access details as follows:
 ![images/2-setup/image15.png](images/2-setup/image15.png)
 
-Now click **Add permission** (this time ***DO*** click the arrow), choose **Produce to a topic** and fill in as below
+Now click **Add permission** (this time ***DO*** click the arrow), choose **Produce to a topic** and fill in as below.
+
 Then click **Add permission** (again this time ***DO*** click the arrow), choose **Consume from a topic** and fill in as below
 
 This is how your permission assigments should now look. Click **Save**
 ![images/2-setup/image16.png](images/2-setup/image16.png)
 
 
+## 4 - Configure OpenShift based storage and inference application to pull images from RHOSAK and make predictions
+
+Login to your OpenShift cluster 
+
+
+
+
 
 
 
@@ -120,10 +128,7 @@ x
 
 ---
 ---
+
 ## 3 - Setup Client Application to capture real-time images from your webcam
 Now
-
-
-## 4 - Configure inference application to pull images from RHOSAK and make predictions
-Finally
 
