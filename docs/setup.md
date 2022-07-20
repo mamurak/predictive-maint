@@ -38,6 +38,17 @@ Name it, stick with a Single Availability zone and click **Create instance**
 Do to the next section (*Create Service Account*) and then come back here - at which point the Status should be **Ready** as seen here:
 ![images/2-setup/image3.png](images/2-setup/image3.png)
 
+### Create Service Account
+
+Navigate to **Service Accounts** and click **Create Service Account**
+![images/2-setup/image4.png](images/2-setup/image4.png)
+
+Give your Service Account a description and click **Create**
+![images/2-setup/image5.png](images/2-setup/image5.png)
+
+Copy your *Client ID* and your *Client secret* somewhere safe, click the tickbox and click ***Close*
+![images/2-setup/image6.png](images/2-setup/image6.png)
+
 
 
 
