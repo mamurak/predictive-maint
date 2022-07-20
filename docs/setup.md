@@ -49,6 +49,10 @@ Give your Service Account a description and click **Create**
 Copy your *Client ID* and your *Client secret* somewhere safe, click the tickbox and click ***Close*
 ![images/2-setup/image6.png](images/2-setup/image6.png)
 
+### Get your Kafka Bootstrap Server details
+
+Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu, then Details: 
+![images/2-setup/image7.png](images/2-setup/image7.png)
 
 
 
