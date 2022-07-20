@@ -49,12 +49,31 @@ Give your Service Account a description and click **Create**
 Copy your *Client ID* and your *Client secret* somewhere safe, click the tickbox and click ***Close*
 ![images/2-setup/image6.png](images/2-setup/image6.png)
 
-### Get your Kafka Bootstrap Server details
+### Get your Kafka Bootstrap server details
 
 Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu, then Details: 
 ![images/2-setup/image7.png](images/2-setup/image7.png)
 
+Click the Connection tab and copy your *Bootstrap server*
+![images/2-setup/image8.png](images/2-setup/image8.png)
 
+### Create your Kafka topic
+
+Return to the **Kafka Instances** screen and click into your Kafka instance:
+![images/2-setup/image9.png](images/2-setup/image9.png)
+
+Click **Topics** then **Create Topic**
+![images/2-setup/image10.png](images/2-setup/image10.png)
+
+
+
+Fill it in ***exactly*** as follows
+```
+Name:		    video-stream
+Partition:	    10
+Replicas        go with the defaults
+Retention time  go with the defaults
+```
 
 
 x
