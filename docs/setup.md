@@ -35,7 +35,15 @@ Click **Create Kafka instance**
 
 
 
+x
 
+x
+
+x
+
+x
+
+x
 
 
 
