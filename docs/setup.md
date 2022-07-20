@@ -76,6 +76,20 @@ Retention size:         go with the defaults
 Replicas:               go with the defaults
 ```
 
+### Configure Access
+
+Still within your new Kafka instance, click **Access** then click **Manage Access**
+![images/2-setup/image11.png](images/2-setup/image11.png)
+
+Click the **Account** dropdown and select the new Service Account you created above
+![images/2-setup/image12.png](images/2-setup/image12.png)
+
+Click **Next**
+![images/2-setup/image13.png](images/2-setup/image13.png)
+
+
+
+
 
 x
 
