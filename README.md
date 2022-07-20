@@ -10,7 +10,7 @@ Data Science team use the platform to build (and re-train) and deploy the model 
 ![docs/images/1-main-readme/img.png](docs/images/1-main-readme/img.png)
 
 # Technical Architecture
-![docs/images/1-main-readme/img_1.png](img_1.png)
+![docs/images/1-main-readme/img_1.png](docs/images/1-main-readme/img_1.png)
 
 # How to run this lab
 - Have an OCP cluster. If you a Red Hat employee or partner, you can use RHPDS
