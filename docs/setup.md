@@ -89,6 +89,15 @@ Click **Next**
 ![images/2-setup/image13.png](images/2-setup/image13.png)
 
 
+Move to the *Assign permissions* section on the bottom of the window and click **Add permission**
+![images/2-setup/image14.png](images/2-setup/image14.png)
+
+
+
+
+
+
+
 
 
 
