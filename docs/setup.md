@@ -1,7 +1,6 @@
 # Setting up the Inference Demo
 
 Follow the instructions in the sections below
----
 
 ## 1 - Setup Kafka Cluster on Red Hat OpenShift Streams for Apache Kafka (RHOSAK)
 First
