@@ -27,10 +27,17 @@ Navigate to **Application and Data Services > Streams for Kafka > Kafka Instance
 
 or just hit:   [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)
 
+### Create Kafka Instance
+
 Click **Create Kafka instance**
 ![images/2-setup/image1-png.png](images/2-setup/image1-png.png)
 
-Name it, stick with a Single availability zone and click **Create instance**
+Name it, stick with a Single Availability zone and click **Create instance**
+![images/2-setup/image2.png](images/2-setup/image2.png)
+
+Do to the next section (*Create Service Account*) and then come back here - at which point the Status should be **Ready** as seen here:
+![images/2-setup/image3.png](images/2-setup/image3.png)
+
 
 
 
