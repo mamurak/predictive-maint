@@ -30,7 +30,7 @@ or just hit:   [https://console.redhat.com/application-services/streams/kafkas](
 Click **Create Kafka instance**
 ![images/2-setup/image1-png.png](images/2-setup/image1-png.png)
 
-
+Name it, stick with a Single availability zone and click **Create instance**
 
 
 
