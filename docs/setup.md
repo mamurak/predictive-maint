@@ -70,9 +70,9 @@ Click **Topics** then **Create Topic**
 Fill it in ***exactly*** as follows
 ```
 Name:		    video-stream
-Partition:	    10
-Replicas            go with the defaults
-Retention time      go with the defaults
+Partitions:	    10
+Replicas:            go with the defaults
+Retention time:      go with the defaults
 ```
 
 
