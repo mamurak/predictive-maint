@@ -105,12 +105,7 @@ This is how your permission assigments should now look. Click **Save**
 
 ## 4 - Configure OpenShift based storage and inference application to pull images from RHOSAK and make predictions
 
-Login to your OpenShift cluster 
-
-
-## Install the Seldon Operator
-
-The Seldon operator is required to expose the model behind a RESTful API.
+### Login to your OpenShift cluster 
 1. Log on to OpenShift as a Cluster Administrator. (For RHPDS this is opentlc-mgr.)
 2. Click the *Perspective* dropdown list box
 3. Click the *Administrator* perspective\
@@ -120,33 +115,36 @@ The Seldon operator is required to expose the model behind a RESTful API.
 ![images/2-setup/image18.png](images/2-setup/image18.png)
 5.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
 ![images/2-setup/image19.png](images/2-setup/image19.png)
-6. Create a new project using the terminal
+
+### Install the Seldon Operator
+
+The Seldon operator is required to expose the model behind a RESTful API.
+
+1. Create a new project using the terminal
 ![images/2-setup/image20.png](images/2-setup/image20.png)
-7. Click your new project on the GUI
+2. Click your new project on the GUI
 ![images/2-setup/image21.png](images/2-setup/image21.png)
-8. Click **Operators > Operator Hub** (ensuring your project is selected on top)
+3. Click **Operators > Operator Hub** (ensuring your project is selected on top)
    ![images/2-setup/image22.png](images/2-setup/image22.png)
    OpenShift displays the operator catalogue.  
-9.  Click the *Filter by keybord* text box and type *seldon*  
+4.  Click the *Filter by keybord* text box and type *seldon*  
    OpenShift displays the *Seldon* tile.
-10. Click the **Community Seldon Operator**  
+5. Click the **Community Seldon Operator**  
    OpenShift displays a Commmunity Operator warning dialog box.
    ![images/2-setup/image23.png](images/2-setup/image23.png)
-11. Click **Continue**  
+6. Click **Continue**  
    OpenShift displays a community operator warning. Accept it by clicking *Continue*.
-12. OpenShift displays the operator details. Click **Install**   
+7. OpenShift displays the operator details. Click **Install**   
  ![images/2-setup/image24.png](images/2-setup/image24.png)     
-13. OpenShift prompts for the operator configuration details. Accept all defaults and click **Install**\
+8. OpenShift prompts for the operator configuration details. Accept all defaults and click **Install**\
  ![images/2-setup/image25.png](images/2-setup/image25.png)
-   OpenShift installs the operator and displays a diaglog box once complete.  
+   OpenShift installs the operator and displays a confirmation box once complete a few minutes later.  
+9. Click *Installed Operators*, ensuring your new project is selected on top. See the installation has succeeded. Click Seldon Operator 
+ ![images/2-setup/image26.png](images/2-setup/image26.png)
+
+10. 
 
 
-
-
-
-14. Click **View Operator**  
-    OpenShift displays the operator details.   
-   <img src="./images/setup/install-4.png" alt="drawing" width="500"/>  
 
 
 
