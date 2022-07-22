@@ -108,6 +108,49 @@ This is how your permission assigments should now look. Click **Save**
 Login to your OpenShift cluster 
 
 
+## Install the Seldon Operator
+
+The Seldon operator is required to expose the model behind a RESTful API.
+1. Log on to OpenShift as a Cluster Administrator. (For RHPDS this is opentlc-mgr.)
+2. Click the *Perspective* dropdown list box
+3. Click the *Administrator* perspective\
+   OpenShift changes the user interface to the Adminstrator perspective.
+![images/2-setup/image17.png](images/2-setup/image17.png)
+4. Click your username on the top right of the screen, then click *Copy Login Command*
+![images/2-setup/image18.png](images/2-setup/image18.png)
+5.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
+![images/2-setup/image19.png](images/2-setup/image19.png)
+6. Create a new project using the terminal
+![images/2-setup/image20.png](images/2-setup/image20.png)
+7. Select your new project on the GUI
+![images/2-setup/image21.png](images/2-setup/image21.png)
+8. x
+9. 
+
+
+
+
+
+10. Click **Operators > Operator Hub**  
+   OpenShift displays the operator catalogue.  
+11. Click the *Filter by keybord* text box and type *seldon*  
+   OpenShift displays the *Seldon* tile.
+11. Click the tile  
+   OpenShift displays a Commmunity Operator warning dialog box.
+11. Click **Continue**  
+   OpenShift displays the operator details.
+12. Click **Install**   
+   OpenShift prompts for the operator configuration details.   
+   <img src="./images/setup/install-2.png" alt="drawing" width="500"/>  
+13. Accept all defaults and click **Install**\
+   OpenShift installs the operator and displays a diaglog box once complete.  
+   <img src="./images/setup/install-3.png" alt="drawing" width="500"/>
+14. Click **View Operator**  
+    OpenShift displays the operator details.   
+   <img src="./images/setup/install-4.png" alt="drawing" width="500"/>  
+
+
+
 
 
 
