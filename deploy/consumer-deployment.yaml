@@ -17,8 +17,8 @@ spec:
       containers:
         - resources:
             requests:
-              cpu: '1'
-              memory: 2Gi
+              cpu: '2'
+              memory: 4Gi
           readinessProbe:
             exec:
               command:
@@ -57,7 +57,7 @@ spec:
             - name: "MINIO_SERVER"
               value: "minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com"
             - name: "PARALLEL_INFERENCE"
-              value: "10"
+              value: "30"
             - name: "PROMETHEUS_SERVER"
               value: "NA"
             - name: "MODEL_URL"
