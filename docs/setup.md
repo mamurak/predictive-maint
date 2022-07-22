@@ -134,13 +134,16 @@ The Seldon operator is required to expose the model behind a RESTful API.
    ![images/2-setup/image23.png](images/2-setup/image23.png)
 11. Click **Continue**  
    OpenShift displays a community operator warning. Accept it by clicking *Continue*.
-12. OpenShift displays the operator details.
-13. Click **Install**   
-   OpenShift prompts for the operator configuration details.   
-
-13. Accept all defaults and click **Install**\
+12. OpenShift displays the operator details. Click **Install**   
+ ![images/2-setup/image24.png](images/2-setup/image24.png)     
+13. OpenShift prompts for the operator configuration details. Accept all defaults and click **Install**\
+ ![images/2-setup/image25.png](images/2-setup/image25.png)
    OpenShift installs the operator and displays a diaglog box once complete.  
-   <img src="./images/setup/install-3.png" alt="drawing" width="500"/>
+
+
+
+
+
 14. Click **View Operator**  
     OpenShift displays the operator details.   
    <img src="./images/setup/install-4.png" alt="drawing" width="500"/>  
