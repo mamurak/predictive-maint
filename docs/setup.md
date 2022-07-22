@@ -160,8 +160,8 @@ The Seldon operator is required to expose the model behind a RESTful API.
    ```
    oc apply -f $REPO_HOME/deploy/minio-full.yaml
    ```
-2. In OpenShift, move to **Workloads > Pods**
-
+2. In OpenShift, move to **Workloads > Pods**. After 5a few minutes, both your Minio and Deldon pods should be Running and Ready. (ignore any initial erros for the first couple of minutes - they will work themselves out)
+![images/2-setup/image30.png](images/2-setup/image30.png)
 
 
 
