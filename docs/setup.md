@@ -122,26 +122,22 @@ The Seldon operator is required to expose the model behind a RESTful API.
 ![images/2-setup/image19.png](images/2-setup/image19.png)
 6. Create a new project using the terminal
 ![images/2-setup/image20.png](images/2-setup/image20.png)
-7. Select your new project on the GUI
+7. Click your new project on the GUI
 ![images/2-setup/image21.png](images/2-setup/image21.png)
-8. x
-9. 
-
-
-
-
-
-10. Click **Operators > Operator Hub**  
+8. Click **Operators > Operator Hub** (ensuring your project is selected on top)
+   ![images/2-setup/image22.png](images/2-setup/image22.png)
    OpenShift displays the operator catalogue.  
-11. Click the *Filter by keybord* text box and type *seldon*  
+9.  Click the *Filter by keybord* text box and type *seldon*  
    OpenShift displays the *Seldon* tile.
-11. Click the tile  
+10. Click the **Community Seldon Operator**  
    OpenShift displays a Commmunity Operator warning dialog box.
+   ![images/2-setup/image23.png](images/2-setup/image23.png)
 11. Click **Continue**  
-   OpenShift displays the operator details.
-12. Click **Install**   
+   OpenShift displays a community operator warning. Accept it by clicking *Continue*.
+12. OpenShift displays the operator details.
+13. Click **Install**   
    OpenShift prompts for the operator configuration details.   
-   <img src="./images/setup/install-2.png" alt="drawing" width="500"/>  
+
 13. Accept all defaults and click **Install**\
    OpenShift installs the operator and displays a diaglog box once complete.  
    <img src="./images/setup/install-3.png" alt="drawing" width="500"/>
