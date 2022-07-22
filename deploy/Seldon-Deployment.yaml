@@ -16,13 +16,13 @@ spec:
         team: opendatahub
       componentSpecs:
         - hpaSpec:
-            maxReplicas: 15
+            maxReplicas: 35
             metrics:
               - resource:
                   name: cpu
                   targetAverageUtilization: 80
                 type: Resource
-            minReplicas: 10
+            minReplicas: 30
           spec:
             containers:
               - env:
