@@ -145,11 +145,22 @@ The Seldon operator is required to expose the model behind a RESTful API.
 10. Click **Seldon Deployment** then **Create Seldon Deployment**
  ![images/2-setup/image27.png](images/2-setup/image27.png)
 
+11. On your laptop (or wherever you cloned this repositiory above), navigate to and copy the entire contents of the file **deploy > Seldon-Deployment.yaml**
+ ![images/2-setup/image28.png](images/2-setup/image28.png)
+
+12. Back on OpenShift, choose **YAML view** and replace the default YAML with what you copied in the previous step. Click **Create**
+ ![images/2-setup/image29.png](images/2-setup/image29.png)
+ A few minutes this should be complete.
 
 
+### Install Minio, our lightweight Object Storage implementation
 
 
-
+1. In your terminal window, type the following commands:
+   ```
+   oc apply -f $REPO_HOME/deploy/minio-full.yaml
+   ```
+2. In OpenShift, move to **Workloads > Pods**
 
 
 
