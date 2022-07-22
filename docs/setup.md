@@ -139,11 +139,11 @@ The Seldon operator is required to expose the model behind a RESTful API.
 8. OpenShift prompts for the operator configuration details. Accept all defaults and click **Install**\
  ![images/2-setup/image25.png](images/2-setup/image25.png)
    OpenShift installs the operator and displays a confirmation box once complete a few minutes later.  
-9. Click *Installed Operators*, ensuring your new project is selected on top. See the installation has succeeded. Click Seldon Operator 
+9. Click **Installed Operators**, ensuring your new project is selected on top. See the installation has succeeded. Click **Seldon Operator** 
  ![images/2-setup/image26.png](images/2-setup/image26.png)
 
-10. 
-
+10. Click **Seldon Deployment** then **Create Seldon Deployment**
+ ![images/2-setup/image27.png](images/2-setup/image27.png)
 
 
 
