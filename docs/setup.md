@@ -54,7 +54,7 @@ Copy your *Client ID* and your *Client secret* somewhere safe. We'll refer to th
 Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu, then Details: 
 ![images/2-setup/image7.png](images/2-setup/image7.png)
 
-Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_BOOTSTRAP_SERVER
+Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_KAFKA_BOOTSTRAP_SERVER
 ![images/2-setup/image8.png](images/2-setup/image8.png)
 
 ### Create your Kafka topic
@@ -182,19 +182,20 @@ The Seldon operator is required to expose the model behind a RESTful API.
 ![images/2-setup/image33.png](images/2-setup/image33.png)
 
 5. Navigate back to **Networking > Routes**. Take a note the OpenShift Routes for 
-   - the first Minio Route (the one without ***UI***)
+   - the first Minio Route (i.e. the one without ***ui***)
    - the Seldon Route. 
 ![images/2-setup/image34.png](images/2-setup/image34.png)
 
 6. We'll need 2 URLs from these 
-   - MINIO_API_URL - which is your *Minio API Route* from the previous step
-   - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previou step. In my case
+   - MINIO_API_URL - which is your *Minio API Route* from the previous step. In my case
    ```
-   MINIO_API_URL
+   YOUR_MINIO_API_URL
    http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
    ```
+   
+   - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previous step. In my case
    ```
-   SELDON_INFERENCE_URL
+    YOUR_SELDON_INFERENCE_URL
    http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
    ```
 
@@ -208,29 +209,40 @@ When you later run
 1. your edge based webcam image retrieval client
 2. your OpenShift based inference service
 
-you'll need to configure each with various ENVIROMENT variables
-At this point, we have all we need to record these. 
+you'll need to configure each with various ENVIROMENT variables.
 
 They're summarised here in a generalised format:
 ```
 MINIO_USER="minio"
 MINIO_PASSWORD="minio123"
-SASL_USERNAME="<YOUR_CLIENT_ID retrieved above>"
-SASL_PASSWORD="<YOUR_CLIENT_SECRET retrieved above>"
-KAFKA_BROKER="<yours>"
+SASL_USERNAME="<YOUR_CLIENT_ID recorded above>"
+SASL_PASSWORD="<YOUR_CLIENT_SECRET recorded above>"
+KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
 GROUP_ID="imageclassification"
-MINIO_SERVER="<yours>"
+MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
 PARALLEL_INFERENCE=15
 PROMETHEUS_SERVER=localhost:9090
-MODEL_URL=”<your MODEL_URL - see above>”
+MODEL_URL="<YOUR_SELDON_INFERENCE_URL recorded above>"
 ```
 
 And they're summarised here with my specific examples:
 ```
-
+MINIO_USER="minio"
+MINIO_PASSWORD="minio123"
+SASL_USERNAME="fe62774f-6308-48d1-954a-d75e43eda326"
+SASL_PASSWORD="cfc764aa-8790-4fad-9086-138280dad297"
+KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
+GROUP_ID="imageclassification"
+MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
+PARALLEL_INFERENCE=15
+PROMETHEUS_SERVER=localhost:9090
+MODEL_URL="<YOUR_SELDON_INFERENCE_URL recorded above>"
 ```
 
+Take a note of your equivalents substituting the values beginning with ***YOUR_***. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
 
+Client ID:      
+Client secret:  
 
 
 x
