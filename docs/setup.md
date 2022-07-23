@@ -262,7 +262,15 @@ Now change directory to the *event-producer* directory in the repo code cloned a
 cd $REPO_HOME/event-producer
 ```
 
-The final thing you'll need to do before running your client is export five of ***YOUR_ENVIRONMENT_VARIABLES*** from above. Just place the export command in front of each and hit enter. i.e. in my case:
+The final thing you'll need to do before running your client is export five of ***YOUR_ENVIRONMENT_VARIABLES*** from above. Just place the export command in front of each and hit enter. 
+```
+export SASL_USERNAME="<YOUR_CLIENT_ID recorded above>"
+export SASL_PASSWORD="<YOUR_CLIENT_SECRET recorded above>"
+export KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
+export GROUP_ID="imageclassification"
+export PARALLEL_INFERENCE=30
+```
+i.e. in my case:
 ![images/2-setup/image35.png](images/2-setup/image35.png)
 
 Now your client is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
