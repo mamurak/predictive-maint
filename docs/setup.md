@@ -189,14 +189,14 @@ The Seldon operator is required to expose the model behind a RESTful API.
 6. We'll need 2 URLs from these 
    - MINIO_API_URL - which is your *Minio API Route* from the previous step
    - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previou step. In my case
-```
-MINIO_API_URL
-http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
-```
-```
-SELDON_INFERENCE_URL
-http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
-```
+   ```
+   MINIO_API_URL
+   http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
+   ```
+   ```
+   SELDON_INFERENCE_URL
+   http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
+   ```
 
 
 
