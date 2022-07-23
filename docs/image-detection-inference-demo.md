@@ -15,7 +15,7 @@ go run .
 
 This will immediately start pulling images from your webcam and sending them to Kafka. You'll see something like this on your terminal
 
-![images/3-inference-demo/image2.png](images/3-inference-demo/image2.png)
+![images/3-inference-demo/image6.png](images/3-inference-demo/image6.png)
 
 
 ## 2 - Running the OpenShift inference application to pull images from RHOSAK and make realtime predictions
