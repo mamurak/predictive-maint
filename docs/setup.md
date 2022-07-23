@@ -103,7 +103,7 @@ This is how your permission assigments should now look. Click **Save**
 ![images/2-setup/image16.png](images/2-setup/image16.png)
 
 
-## 4 - Configure OpenShift based storage and inference application to pull images from RHOSAK and make predictions
+## 4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
 
 ### Login to your OpenShift cluster 
 1. Log on to OpenShift as a Cluster Administrator. (For RHPDS this is opentlc-mgr.)
@@ -116,7 +116,7 @@ This is how your permission assigments should now look. Click **Save**
 5.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
 ![images/2-setup/image19.png](images/2-setup/image19.png)
 
-### Install the Seldon Operator
+### Install the Seldon Operator and Seldon Deployment
 
 The Seldon operator is required to expose the model behind a RESTful API.
 
@@ -160,9 +160,77 @@ The Seldon operator is required to expose the model behind a RESTful API.
    ```
    oc apply -f $REPO_HOME/deploy/minio-full.yaml
    ```
-2. In OpenShift, move to **Workloads > Pods**. After 5a few minutes, both your Minio and Deldon pods should be Running and Ready. (ignore any initial erros for the first couple of minutes - they will work themselves out)
+
+
+### Get your Minio and Seldon URLs (Routes)
+
+1. In OpenShift, move to **Workloads > Pods**. After a few minutes, both your Minio and Seldon pods should be Running and Ready. (ignore any initial errors for the first couple of minutes - they will work themselves out)
 ![images/2-setup/image30.png](images/2-setup/image30.png)
 
+2. Navigate to **Networking > Services**. Find the Service whose port is 8000. Take a note of its name, in my case *seldon-model-example*.
+![images/2-setup/image31.png](images/2-setup/image31.png)
+
+3. You now need to expose that Service as a Route. Navigate to **Networking > Routes**, then click **Create Route**
+![images/2-setup/image32.png](images/2-setup/image32.png)
+
+4. Do the following
+   - Ensure your new project is selected on top
+   - Name your project something like *seldon-route*
+   - Select the Service you noted a couple of steps back, in my case *seldon-model-example*
+   -  Map port 8000 to 8000 as shown
+   - Click **Create**
+![images/2-setup/image33.png](images/2-setup/image33.png)
+
+5. Navigate back to **Networking > Routes**. Take a note the OpenShift Routes for 
+   - the first Minio Route (the one without ***UI***)
+   - the Seldon Route. 
+![images/2-setup/image34.png](images/2-setup/image34.png)
+
+6. We'll need 2 URLs from these 
+   - MINIO_API_URL - which is your *Minio API Route* from the previous step
+   - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previou step. In my case
+```
+MINIO_API_URL
+http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
+```
+```
+SELDON_INFERENCE_URL
+http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
+```
+
+
+
+
+
+
+## 5 - Record your Environment Variables
+When you later run 
+1. your edge based webcam image retrieval client
+2. your OpenShift based inference service
+
+you'll need to configure each with various ENVIROMENT variables
+At this point, we have all we need to record these. 
+
+They're summarised here in a generalised format:
+```
+MINIO_USER="minio"
+MINIO_PASSWORD="minio123"
+SASL_USERNAME="<YOUR_CLIENT_ID retrieved above>"
+SASL_PASSWORD="<YOUR_CLIENT_SECRET retrieved above>"
+KAFKA_BROKER="<yours>"
+GROUP_ID="imageclassification"
+MINIO_SERVER="<yours>"
+PARALLEL_INFERENCE=15
+PROMETHEUS_SERVER=localhost:9090
+MODEL_URL=”<your MODEL_URL - see above>”
+```
+
+And they're summarised here with my specific examples:
+```
+
+```
+
+
 
 
 x
@@ -175,7 +243,7 @@ x
 
 x
 
-
+## 4 - Configure OpenShift based object storage and inference application to pull images from RHOSAK and make prediction
 
 ---
 ---
