@@ -128,6 +128,7 @@ oc new-project a-predictive-maint-$USER
 oc delete limits a-inference-demo-$USER-core-resource-limits
 ```
 ![images/2-setup/image20.png](images/2-setup/image20.png)
+
 2. Click your new project on the GUI
 ![images/2-setup/image21.png](images/2-setup/image21.png)
 3. Click **Operators > Operator Hub** (ensuring your project is selected on top)
