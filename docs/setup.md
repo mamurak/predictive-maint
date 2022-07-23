@@ -265,19 +265,19 @@ cd $REPO_HOME/event-producer
 The final thing you'll need to do before running your client is export five of ***YOUR_ENVIRONMENT_VARIABLES*** from above. Just place the export command in front of each and hit enter. i.e. in my case:
 ![images/2-setup/image35.png](images/2-setup/image35.png)
 
-Now your client is ready. We'll do that in the next instruction file, [Run Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
-x
+Now your client is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
 
-x
 
-x
+## 4 - Configure your OpenShift inference application to pull images from RHOSAK and make realtime predictions
 
-x
+We have a simple OpenShift based application that 
+- pulls images from our video-stream Kafka topic we set up earlier
+- for each one, it calls the Model via ***YOUR_SELDON_INFERENCE_URL*** for a prediction on what the image contains
+- writes the count of what it found out to our Object Storage Minio
+  
+We simply need to configure it ***YOUR_ENVIRONMENT_VARIABLES*** that you set up previously.
 
-x
+On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see placeholders for ***YOUR_ENVIRONMENT_VARIABLES***. Fill them in and **Save the file** (e.g. as shown with mine).
+![images/2-setup/image36.png](images/2-setup/image36.png)
 
-## 4 - Configure OpenShift based object storage and inference application to pull images from RHOSAK and make prediction
-
----
----
-
+Now your inference application is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
