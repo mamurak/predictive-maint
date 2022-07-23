@@ -54,7 +54,7 @@ Copy your *Client ID* and your *Client secret* somewhere safe. We'll refer to th
 Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu, then Details: 
 ![images/2-setup/image7.png](images/2-setup/image7.png)
 
-Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_KAFKA_BOOTSTRAP_SERVER
+Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_KAFKA_BOOTSTRAP_SERVER (in my case *tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443*)
 ![images/2-setup/image8.png](images/2-setup/image8.png)
 
 ### Create your Kafka topic
@@ -194,7 +194,7 @@ The Seldon operator is required to expose the model behind a RESTful API.
    http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
    ```
    ```
-    YOUR_SELDON_INFERENCE_URL
+   YOUR_SELDON_INFERENCE_URL
    http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
    ```
 
@@ -232,10 +232,10 @@ SASL_USERNAME="fe62774f-6308-48d1-954a-d75e43eda326"
 SASL_PASSWORD="cfc764aa-8790-4fad-9086-138280dad297"
 KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
 GROUP_ID="imageclassification"
-MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
+MINIO_SERVER="http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com"
 PARALLEL_INFERENCE=15
 PROMETHEUS_SERVER=localhost:9090
-MODEL_URL="<YOUR_SELDON_INFERENCE_URL recorded above>"
+MODEL_URL="http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions"
 ```
 
 Take a note of your equivalents substituting the values beginnging with ***YOUR_***. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
