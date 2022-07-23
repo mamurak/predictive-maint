@@ -187,13 +187,12 @@ The Seldon operator is required to expose the model behind a RESTful API.
 ![images/2-setup/image34.png](images/2-setup/image34.png)
 
 6. We'll need 2 URLs from these 
-   - MINIO_API_URL - which is your *Minio API Route* from the previous step. In my case
+   - MINIO_API_URL - which is your *Minio API Route* from the previous step
+   - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previous step. In my case
    ```
    YOUR_MINIO_API_URL
    http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
    ```
-   
-   - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previous step. In my case
    ```
     YOUR_SELDON_INFERENCE_URL
    http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
@@ -239,7 +238,7 @@ PROMETHEUS_SERVER=localhost:9090
 MODEL_URL="<YOUR_SELDON_INFERENCE_URL recorded above>"
 ```
 
-Take a note of your equivalents substituting the values beginning with ***YOUR_***. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
+Take a note of your equivalents substituting the values beginnging with ***YOUR_***. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
 
 Client ID:      
 Client secret:  
