@@ -14,7 +14,7 @@ oc delete limits a-model-training-$USER-core-resource-limits
 ![images/5-model-training-setup/image1.png](images/5-model-training-setup/image1.png)
 
 2. Click your new project on the GUI
-![images/5-model-training-setup/image1.png](images/5-model-training-setup/image1.png)
+![images/5-model-training-setup/image2.png](images/5-model-training-setup/image2.png)
 
 3. Click **Operators > Installed Operators** (ensuring your project is selected on top - though ypur project name will probably be different)
 
