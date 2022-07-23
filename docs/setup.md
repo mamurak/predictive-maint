@@ -187,11 +187,11 @@ The Seldon operator is required to expose the model behind a RESTful API.
 ![images/2-setup/image34.png](images/2-setup/image34.png)
 
 6. We'll need 2 URLs from these 
-   - MINIO_API_URL - which is your *Minio API Route* from the previous step
+   - MINIO_API_URL - which is your *Minio API Route* from the previous step - ***WITHOUT*** the HTTPS protocol
    - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previous step. In my case
    ```
    YOUR_MINIO_API_URL
-   http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
+   minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
    ```
    ```
    YOUR_SELDON_INFERENCE_URL
@@ -232,7 +232,7 @@ SASL_USERNAME="fe62774f-6308-48d1-954a-d75e43eda326"
 SASL_PASSWORD="cfc764aa-8790-4fad-9086-138280dad297"
 KAFKA_BROKER="tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443"
 GROUP_ID="imageclassification"
-MINIO_SERVER="http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com"
+MINIO_SERVER="minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com"
 PARALLEL_INFERENCE=30
 PROMETHEUS_SERVER=localhost:9090
 MODEL_URL="http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions"
