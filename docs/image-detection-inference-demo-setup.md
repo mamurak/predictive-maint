@@ -131,7 +131,7 @@ oc delete limits a-inference-demo-$USER-core-resource-limits
 
 2. Click your new project on the GUI
 ![images/2-setup/image21.png](images/2-setup/image21.png)
-3. Click **Operators > Operator Hub** (ensuring your project is selected on top)
+3. Click **Operators > Operator Hub** (ensuring your project is selected on top - though ypur project name will probably be different)
    ![images/2-setup/image22.png](images/2-setup/image22.png)
    OpenShift displays the operator catalogue.  
 4.  Click the *Filter by keybord* text box and type *seldon*  
