@@ -175,7 +175,7 @@ The Seldon operator is required to expose the model behind a RESTful API.
 
 4. Do the following
    - Ensure your new project is selected on top
-   - Name your project something like *seldon-route*
+   - Name your route something like *seldon-route*
    - Select the Service you noted a couple of steps back, in my case *seldon-model-example*
    -  Map port 8000 to 8000 as shown
    - Click **Create**
@@ -197,11 +197,6 @@ The Seldon operator is required to expose the model behind a RESTful API.
    YOUR_SELDON_INFERENCE_URL
    http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
    ```
-
-
-
-
-
 
 ## 5 - Record your Environment Variables
 When you later run 
