@@ -276,7 +276,7 @@ i.e. in my case:
 Now your client is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
 
 
-## 4 - Configure your OpenShift inference application to pull images from RHOSAK and make realtime predictions
+## 7 - Configure your OpenShift inference application to pull images from RHOSAK and make realtime predictions
 
 We have a simple OpenShift based application that 
 - pulls images from our video-stream Kafka topic we set up earlier
