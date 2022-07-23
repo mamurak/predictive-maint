@@ -20,6 +20,7 @@ This will immediately start pulling images from your webcam and sending them to 
 
 ## 2 - Running the OpenShift inference application to pull images from RHOSAK and make realtime predictions
 
+Run this on ***another*** terminal on your laptop
 ```
 oc apply -f $REPO_HOME/deploy/consumer-deployment.yaml
 ```
@@ -27,11 +28,12 @@ oc apply -f $REPO_HOME/deploy/consumer-deployment.yaml
 Switch to OpenShift and move to the pods view. In a couple of minutes, you should have a new pod Running and Ready for your inference application. Click the link on the left of the red highlighted box.
 ![images/3-inference-demo/image4.png](images/3-inference-demo/image4.png)
 
-Click Logs and you should shortly see multiple inferences being made in realtime - indicating whether it is seeing a person, or a background without a person:
+Click Logs and you should shortly see multiple inferences being made in realtime - indicating whether the model is detecting a person, or a background without a person:
 ![images/3-inference-demo/image5.png](images/3-inference-demo/image5.png)
 
-Put your hand in front of your webcam, so it can;t see you. Within a few seconds, the object reported should change from ***Person*** to ***Background***
+Put your hand in front of your webcam, so it can't see you. Within a few seconds, the object reported should change from ***Person*** to ***Background***
 
+Close down both terminals on your laptop.
 
 Next we'll retrain our model so it can recognise objects other than a Person.
 
