@@ -239,7 +239,7 @@ MODEL_URL="http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandb
 ```
 
 Take a note of your equivalents substituting the values beginnging with ***YOUR_***. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
-sx
+
 
 ## 6 - Setup Client Application to capture real-time images from your webcam
 
