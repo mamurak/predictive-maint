@@ -1,6 +1,6 @@
 # Running the Inference Demo
 
-Ensure you have serup this demo first, as instructed in [Setup Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup.md)
+Ensure you have setup this demo first, as instructed in [Setup Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup.md)
 
 ## 1 - Download the OpenShift CLI
 
@@ -15,7 +15,7 @@ go run .
 
 This will immediately start pulling images from your webcam and sending them to Kafka. You'll see something like this on your terminal
 
-![images/3-inference-demo/image2.png](images/3-inference-demo/image1.png)
+![images/3-inference-demo/image2.png](images/3-inference-demo/image2.png)
 
 
 ## 2 - Download the Workshop Files
