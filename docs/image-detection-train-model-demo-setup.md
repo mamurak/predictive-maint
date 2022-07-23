@@ -16,8 +16,20 @@ oc delete limits a-model-training-$USER-core-resource-limits
 2. Click your new project on the GUI
 ![images/5-model-training-setup/image2.png](images/5-model-training-setup/image2.png)
 
-3. Click **Operators > Installed Operators** (ensuring your project is selected on top - though ypur project name will probably be different)
+# TODO GET THEM TO INSTALL KFDEF - OR USE THEIR OWN RHODS ON OUR ROSA
+
+3. Click **Operators > Installed Operators** (ensuring your project is selected on top - though your project name will probably be different)
 
 
+
+
+4. Open Jupyter Hub, logging in with your OpenShift credentials and accept the ***Authorize Access*** warning.
+
+
+5. Select  ***SciKit v1.10 - Elyra Notebook Image***, *Large* Delpoyment Size and Start Server
+![images/5-model-training-setup/image3.png](images/5-model-training-setup/image3.png)
+
+
+6. A few minutes later your 
 
 
