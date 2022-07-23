@@ -1,0 +1,24 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: opendatahub-ml-workshop
+#  namespace: opendatahub
+spec:
+  applications:
+    - kustomizeConfig:
+        overlays:
+          # - cuda
+          # - cuda-11.0.3
+          - additional
+          # - custom-image
+          # - custom-extensions
+        repoRef:
+          name: manifests
+          path: jupyterhub/notebook-images
+      name: notebook-images
+  repos:
+    - name: kf-manifests
+      uri: https://github.com/kubeflow/manifests/archive/v1.2-branch.tar.gz
+    - name: manifests
+      uri: https://github.com/masoodfaisal/odh-manifests/tarball/disconnected-install
+  version: disconnected-install

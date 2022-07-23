@@ -120,7 +120,13 @@ This is how your permission assigments should now look. Click **Save**
 
 The Seldon operator is required to expose the model behind a RESTful API.
 
-1. Create a new project using the terminal
+1. Create a new project using the terminal and delete any limits that get applied to your project. 
+***NOTE ask your instructor what your USER value should be***
+```
+export USER=<ASK INSTRUCTOR>
+oc new-project a-predictive-maint-$USER
+oc delete limits a-inference-demo-$USER-core-resource-limits
+```
 ![images/2-setup/image20.png](images/2-setup/image20.png)
 2. Click your new project on the GUI
 ![images/2-setup/image21.png](images/2-setup/image21.png)
