@@ -219,7 +219,7 @@ SASL_PASSWORD="<YOUR_CLIENT_SECRET recorded above>"
 KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
 GROUP_ID="imageclassification"
 MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
-PARALLEL_INFERENCE=15
+PARALLEL_INFERENCE=30
 PROMETHEUS_SERVER=localhost:9090
 MODEL_URL="<YOUR_SELDON_INFERENCE_URL recorded above>"
 ```
@@ -230,10 +230,10 @@ MINIO_USER="minio"
 MINIO_PASSWORD="minio123"
 SASL_USERNAME="fe62774f-6308-48d1-954a-d75e43eda326"
 SASL_PASSWORD="cfc764aa-8790-4fad-9086-138280dad297"
-KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
+KAFKA_BROKER="tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443"
 GROUP_ID="imageclassification"
 MINIO_SERVER="http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com"
-PARALLEL_INFERENCE=15
+PARALLEL_INFERENCE=30
 PROMETHEUS_SERVER=localhost:9090
 MODEL_URL="http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions"
 ```
@@ -243,7 +243,29 @@ Take a note of your equivalents substituting the values beginnging with ***YOUR_
 Client ID:      
 Client secret:  
 
+## 6 - Setup Client Application to capture real-time images from your webcam
 
+# TODO - REPLACE WITH VIRTUAL BOX
+
+We need to set up the application on your laptop that captures images in realtime from your webcam and pushes them to the ***vieo-stream*** Kafka topic you created earlier - from which the inferencing application will pull them.
+
+In a terminal on your laptop, install the **Go** programming language if you don't have it already. Instructions here: https://go.dev/doc/install.
+
+In my case on a Mac, I just needed to run:
+```
+brew install go
+brew install opencv
+```
+
+Now change directory to the *event-producer* directory in the repo code cloned at the beginning.
+```
+cd $REPO_HOME/event-producer
+```
+
+The final thing you'll need to do before running your client is export five of ***YOUR_ENVIRONMENT_VARIABLES*** from above. Just place the export command in front of each and hit enter. i.e. in my case:
+![images/2-setup/image35.png](images/2-setup/image35.png)
+
+Now your client is ready. We'll do that in the next instruction file, [Run Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
 x
 
 x
@@ -258,7 +280,4 @@ x
 
 ---
 ---
-
-## 3 - Setup Client Application to capture real-time images from your webcam
-Now
 
