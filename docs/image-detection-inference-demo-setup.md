@@ -169,7 +169,7 @@ oc delete limits a-inference-demo-$USER-core-resource-limits
    ```
 
 
-### Get your Minio and Seldon URLs (Routes)
+### Get your Minio URL (Route)
 
 1. In OpenShift, move to **Workloads > Pods**. After a few minutes, both your Minio and Seldon pods should be Running and Ready. (ignore any initial errors for the first couple of minutes - they will work themselves out)
 ![images/2-setup/image30.png](images/2-setup/image30.png)
