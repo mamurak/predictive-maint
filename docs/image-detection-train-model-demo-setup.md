@@ -28,11 +28,15 @@ oc delete limits a-model-training-$USER-core-resource-limits
     - accepting the ***Authorize Access*** warning.
 
 
-5. Select  ***SciKit v1.10 - Elyra Notebook Image***, *Large* Delpoyment Size and Start Server
+5. Do the following  
+   - select ***SciKit v1.10 - Elyra Notebook Image***, 
+   - select *Large* Delpoyment Size and Start Server
+   - add two new variables for ***OPENSHIFT_API_LOGIN_TOKEN*** and your ***OPENSHIFT_API_LOGIN_SERVER***
+   - click **Start Server**
 ![images/5-model-training-setup/image3.png](images/5-model-training-setup/image3.png)
 
 
-6. A few minutes later your Jupyter lab will be available. (the first time takes longer as it's doanloading the container image). Click on the Git icon - then click **Clone a Repository**
+1. A few minutes later your Jupyter lab will be available. (the first time takes longer as it's doanloading the container image). Click on the Git icon - then click **Clone a Repository**
 ![images/5-model-training-setup/image4.png](images/5-model-training-setup/image4.png)
 
 7. Clone this repo - by entering this in the text box.
