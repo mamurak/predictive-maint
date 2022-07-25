@@ -115,6 +115,10 @@ This is how your permission assigments should now look. Click **Save**
 ![images/2-setup/image18.png](images/2-setup/image18.png)
 5.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
 ![images/2-setup/image19.png](images/2-setup/image19.png)
+Keep a note of the 2 values for
+ - OPENSHIFT_API_LOGIN_TOKEN
+ - OPENSHIFT_API_LOGIN_SERVER
+You'll need them for the training demo/workshop below
 
 ### Install the Seldon Operator and Seldon Deployment
 
