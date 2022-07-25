@@ -23,7 +23,9 @@ oc delete limits a-model-training-$USER-core-resource-limits
 
 
 
-4. Open Jupyter Hub, logging in with your OpenShift credentials and accept the ***Authorize Access*** warning.
+4. Open Jupyter Hub - as far as the ***Start a notebook server*** page
+   - logging in with your OpenShift credentials as described in [Login to your OpenShift cluster](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup.md#login-to-your-openshift-cluster)previously - keeping note of your ***OPENSHIFT_API_LOGIN_TOKEN*** and your ***OPENSHIFT_API_LOGIN_SERVER***
+    - accepting the ***Authorize Access*** warning.
 
 
 5. Select  ***SciKit v1.10 - Elyra Notebook Image***, *Large* Delpoyment Size and Start Server
