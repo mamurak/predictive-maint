@@ -24,7 +24,7 @@ oc delete limits a-model-training-$USER-core-resource-limits
 
 
 4. Open Jupyter Hub - as far as the ***Start a notebook server*** page
-   - logging in with your OpenShift credentials as described in [Login to your OpenShift cluster](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup.md#login-to-your-openshift-cluster)previously - keeping note of your ***OPENSHIFT_API_LOGIN_TOKEN*** and your ***OPENSHIFT_API_LOGIN_SERVER***
+   - logging in with your OpenShift credentials as described in [Login to your OpenShift cluster](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup.md#login-to-your-openshift-cluster)  previously - keeping note of your ***OPENSHIFT_API_LOGIN_TOKEN*** and your ***OPENSHIFT_API_LOGIN_SERVER***
     - accepting the ***Authorize Access*** warning.
 
 
