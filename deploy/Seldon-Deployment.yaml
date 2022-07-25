@@ -51,4 +51,3 @@ spec:
         version: predictor
       name: predictor
       replicas: 1
-

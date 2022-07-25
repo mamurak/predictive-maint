@@ -38,6 +38,7 @@ oc delete limits a-model-training-$USER-core-resource-limits
 https://github.com/odh-labs/predictive-maint
 ```
 Now click **Clone**
+![images/5-model-training-setup/image4.png](images/5-model-training-setup/image4.png)
 
 8. 
 

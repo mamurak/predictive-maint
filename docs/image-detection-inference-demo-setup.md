@@ -193,16 +193,11 @@ oc delete limits a-inference-demo-$USER-core-resource-limits
    - the Seldon Route. 
 ![images/2-setup/image34.png](images/2-setup/image34.png)
 
-6. We'll need 2 URLs from these 
+6. We'll need a URL from these 
    - MINIO_API_URL - which is your *Minio API Route* from the previous step - ***WITHOUT*** the HTTPS protocol
-   - SELDON_INFERENCE_URL - which is the path ***"/api/v1.0/predictions"*** appended to your Seldon Route from the previous step. In my case
    ```
    YOUR_MINIO_API_URL
    minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
-   ```
-   ```
-   YOUR_SELDON_INFERENCE_URL
-   http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions
    ```
 
 ## 5 - Record your Environment Variables
@@ -223,7 +218,7 @@ GROUP_ID="imageclassification"
 MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
 PARALLEL_INFERENCE=30
 PROMETHEUS_SERVER=localhost:9090
-MODEL_URL="<YOUR_SELDON_INFERENCE_URL recorded above>"
+MODEL_URL="http://model-1-pred-demo:8000/api/v1.0/predictions"
 ```
 
 And they're summarised here with my specific examples:
@@ -237,7 +232,7 @@ GROUP_ID="imageclassification"
 MINIO_SERVER="minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com"
 PARALLEL_INFERENCE=30
 PROMETHEUS_SERVER=localhost:9090
-MODEL_URL="http://seldon-route-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com/api/v1.0/predictions"
+MODEL_URL="export MODEL_URL="http://model-1-pred-demo:8000/api/v1.0/predictions"
 ```
 
 Take a note of your equivalents substituting the values beginnging with ***YOUR_***. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
@@ -280,7 +275,7 @@ Now your client is ready. We'll use it in the next instruction file, [Run End to
 
 We have a simple OpenShift based application that 
 - pulls images from our video-stream Kafka topic we set up earlier
-- for each one, it calls the Model via ***YOUR_SELDON_INFERENCE_URL*** for a prediction on what the image contains
+- for each one, it calls the Model via the MODEL_URL value above (always http://model-1-pred-demo:8000/api/v1.0/predictions) for a prediction on what the image contains
 - writes the count of what it found out to our Object Storage Minio
   
 We simply need to configure it ***YOUR_ENVIRONMENT_VARIABLES*** that you set up previously.
