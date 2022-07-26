@@ -294,6 +294,7 @@ i.e. replace ***CHANGE_ME_FULL_MINIO_API_ROUTE*** with your ***FULL_MINIO_API_RO
 '[CHANGE_ME_FULL_MINIO_API_ROUTE]/image-prediction/'
 ```
 ... in my case 
-image37.png
+![images/2-setup/image38.png](images/2-setup/image38.png)
+
 
 Now your inference application is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
