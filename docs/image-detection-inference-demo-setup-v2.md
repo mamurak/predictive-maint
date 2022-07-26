@@ -188,7 +188,15 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
 
 1. Navigate to **Netorking > Routes** and click on the second Minio Route, the one with ***ui*** at the end of the name.
 ![images/2-setup/image34-minio2.png](images/2-setup/image34-minio2.png)
-2. 
+
+2. Enter the credentials 
+```
+Id:         minio
+Password:   minio123
+```
+![images/2-setup/image34-minio3.png](images/2-setup/image34-minio3.png)
+
+3.  
 
 ## 5 - Record your Environment Variables
 When you later run 
