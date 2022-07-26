@@ -163,8 +163,13 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
    - the first Minio Route (i.e. the one without ***ui***)
 ![images/2-setup/image34.png](images/2-setup/image34.png)
 
-1. We'll need a URL from these 
-   - MINIO_API_URL - which is your *Minio API Route* from the previous step - ***WITHOUT*** the HTTPS protocol
+1. We'll need to take note of
+   - FULL_MINIO_API_ROUTE - which is your *Minio API Route* from the previous step ***WITH*** the HTTP protocol
+   ```
+   FULL_MINIO_API_ROUTE
+   http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
+   ```
+   - MINIO_API_URL - which is your *Minio API Route* from the previous step - ***WITHOUT*** the HTTP protocol
    ```
    YOUR_MINIO_API_URL
    minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
