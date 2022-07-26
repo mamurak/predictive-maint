@@ -21,7 +21,91 @@ export REPO_HOME=`pwd`
 
 
 ## 3 - Setup Kafka Cluster on Red Hat OpenShift Streams for Apache Kafka (RHOSAK)
-First, Login to **https://console.redhat.com** - you may need to create a free account.
+In this section, we're going to automate the configuration of your Kafka streaming service
+ - to which images will be sent from your laptop in realtime
+ - and from which those images will be pulled for your inferencing application, also in realtime.
+
+First, run this to download the Red Hat OpenShift Application Services (RHOAS) Command Line Interface (CLI)
+```
+cd $REPO_HOME
+curl -o- https://raw.githubusercontent.com/redhat-developer/app-services-cli/main/scripts/install.sh | bash
+```
+
+You should see a confirmation message, including the location the CLI was installed to:
+![images/2-setup/image0-1-terminal.png](images/2-setup/image0-1-terminal.png)
+
+Next, you need to add that to your path - e.g. on a Mac:
+```
+export PATH=%PATH%:/Users/<INSERT YOUR USERNAME HERE>/bin
+```
+in my case:
+![images/2-setup/image0-2-export-path.png](images/2-setup/image0-2-export-path.png)
+
+Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**
+
+Now, using the RHOAS CLI, login to your Red Hat SaaS service, by running the following, entering your credentials just created, and following the instructions to login.
+```
+rhoas login
+```
+i.e. copy the generated login URL on the console into a browser, supplying your credentials on the webpages.
+![images/2-setup/image0-3-Login-URL.png](images/2-setup/image0-3-Login-URL.png)
+
+A confirmation page like the following will appear on your browser
+![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
+
+
+Now we need to install the Red Hat OpenShift Application Services (RHOAS) Command Line Interface (CLI). This will allow us to automate our Kafka configustion,
+In a terminal on your laptop, navigate to the deploy folder in this repository and run the kafka shell script
+```
+cd $REPO_HOME/deploy
+sh ./kafka.sh
+```
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+x
+
+
+
+
+
+
+
+
+
+
+
+
 
 Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**
 
