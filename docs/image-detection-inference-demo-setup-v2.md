@@ -202,7 +202,9 @@ Password:   minio123
 4. Click the button beside the *Access Policy* button
 ![images/2-setup/image34-minio5.png](images/2-setup/image34-minio5.png)
 
-5. 
+5. Change the dropdown to ***public*** and click **Set**
+![images/2-setup/image34-minio6.png](images/2-setup/image34-minio6.png)
+
 
 ## 5 - Record your Environment Variables
 When you later run 
