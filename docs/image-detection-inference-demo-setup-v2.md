@@ -286,6 +286,14 @@ It's this file
 $REPO_HOME/deploy/show_data.html
 ```
 
-Open the file using a text editor and change line 7. Replace 
+Open the file using a text editor and change line 7.
+![images/2-setup/image37.png](images/2-setup/image37.png)
+
+i.e. replace ***CHANGE_ME_FULL_MINIO_API_ROUTE*** with your ***FULL_MINIO_API_ROUTE*** retrieved above
+```
+'[CHANGE_ME_FULL_MINIO_API_ROUTE]/image-prediction/'
+```
+... in my case 
+image37.png
 
 Now your inference application is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
