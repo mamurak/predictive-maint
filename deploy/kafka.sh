@@ -53,5 +53,5 @@ echo "$CLIENT_SECRET"
 #validate service account is created
 rhoas service-account list | grep "${KAFKA_NAME}-service-account"
 
-rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix '*'  --group all
+rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix '*'  --group all  -y
 

@@ -43,148 +43,43 @@ in my case:
 
 Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**
 
-Now, using the RHOAS CLI, login to your Red Hat SaaS service, by running the following, entering your credentials just created, and following the instructions to login.
+Now, using the RHOAS CLI in a terminal on your laptop, login to your Red Hat SaaS service, by running the following, entering your credentials just created, and following the instructions to login.
 ```
 rhoas login
 ```
-i.e. copy the generated login URL on the console into a browser, supplying your credentials on the webpages.
+i.e. A browser should pop up, prompting you to login again to **https://console.redhat.com**. If that page doesn't automatically appear, copy the generated login URL on the console into a browser.
 ![images/2-setup/image0-3-Login-URL.png](images/2-setup/image0-3-Login-URL.png)
+
+Login using your *console.redhat.com*  credentials
 
 A confirmation page like the following will appear on your browser
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
 
-Now we need to install the Red Hat OpenShift Application Services (RHOAS) Command Line Interface (CLI). This will allow us to automate our Kafka configustion,
-In a terminal on your laptop, navigate to the deploy folder in this repository and run the kafka shell script
+In the same terminal on your laptop, navigate to the deploy folder in this repository and run the kafka shell script
 ```
 cd $REPO_HOME/deploy
-sh ./kafka.sh
+sh kafka.sh
 ```
+This will take several minutes. Keep the terminal open, allowing it to continue the Kafka configuration. 
 
-x
+### Confirm your Kafka installation
+Come back in 10 minutes to check it has completed successfully.
+i.e. do the following:
+- Scan your terminal output - it should have run to completion with no errors.
+- navigate to [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)
+and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***video-stream***, and configuration under the Access tab have been added.
 
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-x
-
-
-
-
-
-
-
-
-
-
-
-
-
-Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**
-
-or just hit:   [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)
-
-### Create Kafka Instance
-
-Click **Create Kafka instance**
-![images/2-setup/image1-png.png](images/2-setup/image1-png.png)
-
-Name it, stick with a Single Availability zone and click **Create instance**
-![images/2-setup/image2.png](images/2-setup/image2.png)
-
-Do to the next section (*Create Service Account*) and then come back here - at which point the Status should be **Ready** as seen here:
-![images/2-setup/image3.png](images/2-setup/image3.png)
-
-### Create Service Account
-
-Navigate to **Service Accounts** and click **Create Service Account**
-![images/2-setup/image4.png](images/2-setup/image4.png)
-
-Give your Service Account a description and click **Create**
-![images/2-setup/image5.png](images/2-setup/image5.png)
-
-Copy your *Client ID* and your *Client secret* somewhere safe. We'll refer to these below as YOUR_CLIENT_ID and YOUR_CLIENT_SECRET. Click the tickbox and click ***Close*
-![images/2-setup/image6.png](images/2-setup/image6.png)
 
 ### Get your Kafka Bootstrap server details
 
-Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu, then Details: 
+- Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, (or just hit [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)). 
+- Select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu
+- Click Details: 
 ![images/2-setup/image7.png](images/2-setup/image7.png)
 
-Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_KAFKA_BOOTSTRAP_SERVER (in my case *tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443*)
+- Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_KAFKA_BOOTSTRAP_SERVER (in my case *tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443*)
 ![images/2-setup/image8.png](images/2-setup/image8.png)
-
-### Create your Kafka topic
-
-Return to the **Kafka Instances** screen and click into your Kafka instance:
-![images/2-setup/image9.png](images/2-setup/image9.png)
-
-Click **Topics** then **Create Topic**
-![images/2-setup/image10.png](images/2-setup/image10.png)
-
-
-
-Fill it in ***exactly*** as follows, clicking **Next** between selections and **Finish** at the end
-```
-Name:		        video-stream
-Partitions:	        10
-Retention time:         go with the defaults
-Retention size:         go with the defaults
-Replicas:               go with the defaults
-```
-
-### Configure Access
-
-Still within your new Kafka instance, click **Access** then click **Manage Access**
-![images/2-setup/image11.png](images/2-setup/image11.png)
-
-Click the **Account** dropdown and select the new Service Account you created above
-![images/2-setup/image12.png](images/2-setup/image12.png)
-
-Click **Next**
-
-![images/2-setup/image13.png](images/2-setup/image13.png)
-
-
-Move to the *Assign permissions* section on the bottom of the window and click **Add permission** (note click the *Add Permission* text, not the dropdown's arrow)
-![images/2-setup/image14.png](images/2-setup/image14.png)
-
-Fill in access details as follows:
-![images/2-setup/image15.png](images/2-setup/image15.png)
-
-Now click **Add permission** (this time ***DO*** click the arrow), choose **Produce to a topic** and fill in as below.
-
-Then click **Add permission** (again this time ***DO*** click the arrow), choose **Consume from a topic** and fill in as below
-
-This is how your permission assigments should now look. Click **Save**
-![images/2-setup/image16.png](images/2-setup/image16.png)
 
 
 ## 4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
