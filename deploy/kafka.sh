@@ -1,24 +1,25 @@
 #!/bin/bash
 
-# https://github.com/masoodfaisal/anamoly-detection/blob/main/deploy/kafka.sh
-
 ## install rhoas from curl -o- https://raw.githubusercontent.com/redhat-developer/app-services-cli/main/scripts/install.sh | bash
 ## make sure you are logged into rhoas via 'rhoas
 
 #curl -o- https://raw.githubusercontent.com/redhat-developer/app-services-cli/main/scripts/install.sh | bash
 
 #export PATH
+brew install jq
 
-KAFKA_NAME='fm-rocks'
+KAFKA_NAME='fm-rocks-v3'
 TOPIC_NAME='video-stream'
 
 rhoas login
 
-export RHOAS_TELEMETRY=false
+export RHOAS_TELEMETRY=true
 
 rhoas --version
 
-rhoas kafka create --name fm-rocks
+rhoas kafka create --name ${KAFKA_NAME}
+
+rhoas context set-kafka --name ${KAFKA_NAME}
 
 while true
 do
@@ -35,12 +36,18 @@ do
   sleep 5
 done
 
-rhoas context set-kafka --name ${KAFKA_NAME}
-
 rhoas kafka topic create --name ${TOPIC_NAME}
 
-#rhoas context status kafka
+rhoas service-account create --file-format json --short-description="${KAFKA_NAME}-service-account"
 
-rhoas service-account create --file-format json --short-description="fmrocks-service-account"
+CLIENT_ID=$(cat credentials.json | jq  --raw-output '.clientID')
+CLIENT_SECRET=$(cat credentials.json | jq  --raw-output '.clientSecret')
 
-rhoas kafka acl grant-access --consumer --producer --service-account srvc-acct-8c95ca5e1225-94a-41f1-ab97-aacf3df1 --topic-prefix '*'  --group all
+echo "$CLIENT_ID"
+echo "$CLIENT_SECRET"
+
+#validate service account is created
+rhoas service-account list | grep "${KAFKA_NAME}-service-account"
+
+rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix '*'  --group all
+
