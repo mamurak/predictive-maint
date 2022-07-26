@@ -153,8 +153,9 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
    ```
 
 
-### Get your Minio URL (Route)
+### Setup your Minio Object Storage
 
+## Get your Minio URL (Route)
 1. In OpenShift, move to **Workloads > Pods**. After a few minutes, both your Minio and Seldon pods should be Running and Ready. (ignore any initial errors for the first couple of minutes - they will work themselves out)
 ![images/2-setup/image30.png](images/2-setup/image30.png)
 
@@ -183,6 +184,11 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
    YOUR_MINIO_API_URL
    minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
    ```
+## Change permissions on your Minio S3 bucket to *Public*
+
+1. Navigate to **Netorking > Routes** and click on the second Minio Route, the one with ***ui*** at the end of the name.
+![images/2-setup/image34-minio2.png](images/2-setup/image34-minio2.png)
+2. 
 
 ## 5 - Record your Environment Variables
 When you later run 
