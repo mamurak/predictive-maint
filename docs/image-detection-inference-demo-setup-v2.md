@@ -109,7 +109,7 @@ The Seldon operator is required to expose the model behind a RESTful API.
 ```
 export USER=<ASK INSTRUCTOR>
 oc new-project a-predictive-maint-$USER
-oc delete limits a-inference-demo-$USER-core-resource-limits
+oc delete limits a-predictive-maint-$USER-core-resource-limits
 ```
 ![images/2-setup/image20.png](images/2-setup/image20.png)
 
