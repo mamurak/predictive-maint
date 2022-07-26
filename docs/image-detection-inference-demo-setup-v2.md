@@ -23,7 +23,7 @@ export REPO_HOME=`pwd`
 ## 3 - Setup Kafka Cluster on Red Hat OpenShift Streams for Apache Kafka (RHOSAK)
 In this section, we're going to automate the configuration of your Kafka streaming service
  - to which images will be sent from your laptop in realtime
- - and from which those images will be pulled for your inferencing application, also in realtime.
+ - and from which those images will be pulled for your inferencing application on OpenShift, also in realtime.
 
 First, run this to download the Red Hat OpenShift Application Services (RHOAS) Command Line Interface (CLI)
 ```
@@ -41,22 +41,22 @@ export PATH=%PATH%:/Users/<INSERT YOUR USERNAME HERE>/bin
 in my case:
 ![images/2-setup/image0-2-export-path.png](images/2-setup/image0-2-export-path.png)
 
-Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**
+Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
 
 Now, using the RHOAS CLI in a terminal on your laptop, login to your Red Hat SaaS service, by running the following, entering your credentials just created, and following the instructions to login.
 ```
 rhoas login
 ```
-i.e. A browser should pop up, prompting you to login again to **https://console.redhat.com**. If that page doesn't automatically appear, copy the generated login URL on the console into a browser.
-![images/2-setup/image0-3-Login-URL.png](images/2-setup/image0-3-Login-URL.png)
-
-Login using your *console.redhat.com*  credentials
+i.e. A browser should pop up, prompting you to login again to **https://console.redhat.com**. 
+Login using your *console.redhat.com* credentials
 
 A confirmation page like the following will appear on your browser
+![images/2-setup/image0-3-Login-confirmation-browser.png](images/2-setup/image0-3-Login-confirmation-browser.png) 
+
+... as well as confirmation on the terminal:
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
-
-In the same terminal on your laptop, navigate to the deploy folder in this repository and run the kafka shell script
+In the same terminal on your laptop, navigate to the deploy folder in this repository and run the kafka configuration shell script
 ```
 cd $REPO_HOME/deploy
 sh kafka.sh
@@ -67,6 +67,7 @@ This will take several minutes. Keep the terminal open, allowing it to continue 
 Come back in 10 minutes to check it has completed successfully.
 i.e. do the following:
 - Scan your terminal output - it should have run to completion with no errors.
+- You'll need to record 2 items of data in your terminal output. Towards the end of the output, just before the section ***The following ACL rules will be created***, your client id and secret appear. Copy these 2 items - we'll refer to them as ***SASL_USERNAME*** and ***SASL_PASSWORD*** below. ![images/2-setup/image0-5-get-client-id-secret.png](images/2-setup/image0-5-get-client-id-secret.png)
 - navigate to [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)
 and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***video-stream***, and configuration under the Access tab have been added.
 
@@ -194,8 +195,8 @@ They're summarised here in a generalised format:
 ```
 MINIO_USER="minio"
 MINIO_PASSWORD="minio123"
-SASL_USERNAME="<YOUR_CLIENT_ID recorded above>"
-SASL_PASSWORD="<YOUR_CLIENT_SECRET recorded above>"
+SASL_USERNAME="<SASL_USERNAME recorded above>"
+SASL_PASSWORD="<SASL_PASSWORD recorded above>"
 KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
 GROUP_ID="imageclassification"
 MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
@@ -242,11 +243,9 @@ cd $REPO_HOME/event-producer
 
 The final thing you'll need to do before running your client is export five of ***YOUR_ENVIRONMENT_VARIABLES*** from above. Just place the export command in front of each and hit enter. 
 ```
-export SASL_USERNAME="<YOUR_CLIENT_ID recorded above>"
-export SASL_PASSWORD="<YOUR_CLIENT_SECRET recorded above>"
+export SASL_USERNAME="<SASL_USERNAME recorded above>"
+export SASL_PASSWORD="<SASL_PASSWORD recorded above>"
 export KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
-export GROUP_ID="imageclassification"
-export PARALLEL_INFERENCE=30
 ```
 i.e. in my case:
 ![images/2-setup/image35.png](images/2-setup/image35.png)
