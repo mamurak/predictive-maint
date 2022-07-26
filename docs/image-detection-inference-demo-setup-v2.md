@@ -159,26 +159,11 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
 1. In OpenShift, move to **Workloads > Pods**. After a few minutes, both your Minio and Seldon pods should be Running and Ready. (ignore any initial errors for the first couple of minutes - they will work themselves out)
 ![images/2-setup/image30.png](images/2-setup/image30.png)
 
-2. Navigate to **Networking > Services**. Find the Service whose port is 8000. Take a note of its name, in my case *seldon-model-example*.
-![images/2-setup/image31.png](images/2-setup/image31.png)
-
-3. You now need to expose that Service as a Route. Navigate to **Networking > Routes**, then click **Create Route**
-![images/2-setup/image32.png](images/2-setup/image32.png)
-
-4. Do the following
-   - Ensure your new project is selected on top
-   - Name your route something like *seldon-route*
-   - Select the Service you noted a couple of steps back, in my case *seldon-model-example*
-   -  Map port 8000 to 8000 as shown
-   - Click **Create**
-![images/2-setup/image33.png](images/2-setup/image33.png)
-
-5. Navigate back to **Networking > Routes**. Take a note the OpenShift Routes for 
+2. Navigate back to **Networking > Routes**. Take a note the OpenShift Route for 
    - the first Minio Route (i.e. the one without ***ui***)
-   - the Seldon Route. 
 ![images/2-setup/image34.png](images/2-setup/image34.png)
 
-6. We'll need a URL from these 
+1. We'll need a URL from these 
    - MINIO_API_URL - which is your *Minio API Route* from the previous step - ***WITHOUT*** the HTTPS protocol
    ```
    YOUR_MINIO_API_URL
