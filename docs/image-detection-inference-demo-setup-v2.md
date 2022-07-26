@@ -196,7 +196,13 @@ Password:   minio123
 ```
 ![images/2-setup/image34-minio3.png](images/2-setup/image34-minio3.png)
 
-3.  
+3. You'll see a bucket called ***image-prediction***. Click the **Manage** button
+![images/2-setup/image34-minio4.png](images/2-setup/image34-minio4.png)
+
+4. Click the button beside the *Access Policy* button
+![images/2-setup/image34-minio5.png](images/2-setup/image34-minio5.png)
+
+5. 
 
 ## 5 - Record your Environment Variables
 When you later run 
