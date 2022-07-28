@@ -33,7 +33,7 @@ oc delete limits a-model-training-$USER-core-resource-limits
    - select *Large* Delpoyment Size and Start Server
    - add two new variables for ***OPENSHIFT_API_LOGIN_TOKEN*** and your ***OPENSHIFT_API_LOGIN_SERVER*** that you got earlier.
    - click **Start Server**
-![images/5-model-training-setup/image3.png](images/5-model-training-setup/image3.png)
+![images/5-model-training-setup/image3-1.png](images/5-model-training-setup/image3-1.png)
 
 
 1. A few minutes later your Jupyter lab will be available. (the first time takes longer as it's doanloading the container image). Click on the Git icon - then click **Clone a Repository**
