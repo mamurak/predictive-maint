@@ -31,7 +31,7 @@ oc delete limits a-model-training-$USER-core-resource-limits
 5. Do the following  
    - select ***SciKit v1.10 - Elyra Notebook Image***, 
    - select *Large* Delpoyment Size and Start Server
-   - add two new variables for ***OPENSHIFT_API_LOGIN_TOKEN*** and your ***OPENSHIFT_API_LOGIN_SERVER***
+   - add two new variables for ***OPENSHIFT_API_LOGIN_TOKEN*** and your ***OPENSHIFT_API_LOGIN_SERVER*** that you got earlier.
    - click **Start Server**
 ![images/5-model-training-setup/image3.png](images/5-model-training-setup/image3.png)
 
