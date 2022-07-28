@@ -36,7 +36,7 @@ oc delete limits a-model-training-$USER-core-resource-limits
 ![images/5-model-training-setup/image3-1.png](images/5-model-training-setup/image3-1.png)
 
 
-1. A few minutes later your Jupyter lab will be available. (the first time takes longer as it's doanloading the container image). Click on the Git icon - then click **Clone a Repository**
+1. A few minutes later your Jupyter lab will be available. (the first time takes longer as it's downloading the container image). Click on the Git icon - then click **Clone a Repository**
 ![images/5-model-training-setup/image4.png](images/5-model-training-setup/image4.png)
 
 7. Clone this repo - by entering this in the text box.
