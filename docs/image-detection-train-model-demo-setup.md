@@ -37,4 +37,7 @@ oc delete limits a-model-training-$USER-core-resource-limits
 
 
 6. A few minutes later your Jupyter lab will be available. (the first time takes longer as it's downloading the container image). Click on the Git icon - then click **Clone a Repository** - then entering this in the text box and clicking **Clone**.
+```
+git clone https://github.com/odh-labs/predictive-maint
+```
 ![images/5-model-training-setup/image4.png](images/5-model-training-setup/image4.png)
