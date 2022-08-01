@@ -14,7 +14,7 @@ Data Science team use the platform to build (and re-train) and deploy the model 
 
 # How to run this lab
 - Have an OCP cluster. If you a Red Hat employee or partner, you can use RHPDS
-- To set up, see instructions in [setup.md](docs/setup.md)
+- To set up, see instructions in [setup.md](docs/image-detection-inference-demo-setup-v2.md)
 - To run inference demo, see instructions in [image-detection-inference-demo.md](docs/image-detection-inference-demo.md)
 - To train a new model to use in the inference demo, see instructions in [image-detection-train-model-demo.md](ddocs/image-detection-train-model-demo.md)
   
