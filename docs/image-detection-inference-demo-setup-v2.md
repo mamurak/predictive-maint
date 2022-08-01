@@ -176,7 +176,7 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
    ```
 ## Change permissions on your Minio S3 bucket to *Public*
 
-1. Navigate to **Netorking > Routes** and click on the second Minio Route, the one with ***ui*** at the end of the name.
+1. Navigate to **Networking > Routes** and click on the second Minio Route, the one with ***ui*** at the end of the name.
 ![images/2-setup/image34-minio2.png](images/2-setup/image34-minio2.png)
 
 2. Enter the credentials 
