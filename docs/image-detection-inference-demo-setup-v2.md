@@ -231,7 +231,7 @@ PROMETHEUS_SERVER=localhost:9090
 MODEL_URL="export MODEL_URL="http://model-1-pred-demo:8000/api/v1.0/predictions"
 ```
 
-Take a note of your equivalents substituting the values beginnging with ***YOUR_***. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
+Take a note of the four that vary (ones you recorded above). We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
 
 
 ## 6 - Setup Client Application to capture real-time images from your webcam
