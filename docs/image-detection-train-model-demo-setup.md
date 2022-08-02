@@ -8,8 +8,8 @@ We are going to create, train and deploy an equivalent model we used previously 
 ***NOTE ask your instructor what your USER value should be***
 ```
 export USER=<ASK INSTRUCTOR>
-oc new-project a-model-training-$USER
-oc delete limits a-model-training-$USER-core-resource-limits
+oc new-project a-train-model-$USER
+oc delete limits a-train-model-$USER-core-resource-limits
 ```
 ![images/5-model-training-setup/image1.png](images/5-model-training-setup/image1.png)
 
