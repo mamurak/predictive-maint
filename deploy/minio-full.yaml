@@ -257,7 +257,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - "mc --config-dir=/config config host add velero http://minio-ml-workshop:9000 minio minio123 && mc --config-dir=/config mb --ignore-existing velero/image-prediction/ && mc --config-dir=/config policy set public velero/mage-prediction"
+            - "mc --config-dir=/config config host add velero http://minio-ml-workshop:9000 minio minio123 && mc --config-dir=/config mb --ignore-existing velero/image-prediction/ && mc --config-dir=/config policy set public velero/image-prediction"
           volumeMounts:
             - name: config
               mountPath: "/config"
