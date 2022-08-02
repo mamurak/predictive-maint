@@ -174,7 +174,7 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
    YOUR_MINIO_API_URL
    minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
    ```
-## Change permissions on your Minio S3 bucket to *Public*
+### Change permissions on your Minio S3 bucket to *Public*
 
 1. Navigate to **Networking > Routes** and click on the second Minio Route, the one with ***ui*** at the end of the name.
 ![images/2-setup/image34-minio2.png](images/2-setup/image34-minio2.png)
