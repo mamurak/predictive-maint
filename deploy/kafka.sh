@@ -19,6 +19,8 @@ TOPIC_NAME='video-stream'
 
 export RHOAS_TELEMETRY=true
 
+rhoas login
+
 rhoas --version
 
 rhoas kafka create --name ${KAFKA_NAME}
@@ -42,7 +44,7 @@ done
 
 rhoas kafka topic create --name ${TOPIC_NAME}
 
-rhoas service-account create --file-format json --short-description="${KAFKA_NAME}-service-account"
+rhoas service-account create --file-format json --short-description="${KAFKA_NAME}-service-account" --overwrite
 
 CLIENT_ID=$(cat credentials.json | jq  --raw-output '.clientID')
 CLIENT_SECRET=$(cat credentials.json | jq  --raw-output '.clientSecret')
