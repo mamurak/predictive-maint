@@ -173,28 +173,6 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
    ```
    YOUR_MINIO_API_URL
    minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
-   ```
-### Change permissions on your Minio S3 bucket to *Public*
-
-1. Navigate to **Networking > Routes** and click on the second Minio Route, the one with ***ui*** at the end of the name.
-![images/2-setup/image34-minio2.png](images/2-setup/image34-minio2.png)
-
-2. Enter the credentials 
-```
-Id:         minio
-Password:   minio123
-```
-![images/2-setup/image34-minio3.png](images/2-setup/image34-minio3.png)
-
-3. You'll see a bucket called ***image-prediction***. Click the **Manage** button
-![images/2-setup/image34-minio4.png](images/2-setup/image34-minio4.png)
-
-4. Click the button beside the *Access Policy* button
-![images/2-setup/image34-minio5.png](images/2-setup/image34-minio5.png)
-
-5. Change the dropdown to ***public*** and click **Set**
-![images/2-setup/image34-minio6.png](images/2-setup/image34-minio6.png)
-
 
 ## 5 - Record your Environment Variables
 When you later run 
