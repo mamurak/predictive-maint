@@ -152,7 +152,7 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
  A few minutes this should be complete.
 
 
-# TO DO FIX THIS - item 5
+# TO DO FIX THIS - item 5 - 
 Explain multiple pods will appear
 
 
