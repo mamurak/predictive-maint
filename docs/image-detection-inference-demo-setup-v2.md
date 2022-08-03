@@ -36,7 +36,7 @@ You should see a confirmation message, including the location the CLI was instal
 
 Next, you need to add that to your path - e.g. on a Mac:
 ```
-export PATH=%PATH%:/Users/<INSERT YOUR USERNAME HERE>/bin
+export PATH=$PATH:/Users/<INSERT YOUR USERNAME HERE>/bin
 ```
 in my case:
 ![images/2-setup/image0-2-export-path.png](images/2-setup/image0-2-export-path.png)
@@ -55,6 +55,14 @@ A confirmation page like the following will appear on your browser
 
 ... as well as confirmation on the terminal:
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
+
+# TO DO FIX THIS - item 2
+In my case on a Mac, I needed to run this in order to run the coommand following it:
+```
+brew install jq
+```
+
+# TO DO DELETE credentials.json - item 3
 
 In the same terminal on your laptop, navigate to the deploy folder in this repository and run the kafka configuration shell script
 ```
@@ -142,6 +150,10 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
 12. Back on OpenShift, choose **YAML view** and replace the default YAML with what you copied in the previous step. Click **Create**
  ![images/2-setup/image29.png](images/2-setup/image29.png)
  A few minutes this should be complete.
+
+
+# TO DO FIX THIS - item 5
+Explain multiple pods will appear
 
 
 ### Install Minio, our lightweight Object Storage implementation
