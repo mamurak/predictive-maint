@@ -5,12 +5,12 @@
 
 <script>
     const minio_location = '[CHANGE_ME_FULL_MINIO_API_ROUTE]/image-prediction/'
-    var midfinger = 0
+    var Finger = 0
     var background = 0
     var person = 0
     function fetchData(){
         $.ajax({
-            url: minio_location +  'MidFinger.txt',
+            url: minio_location +  'Finger.txt',
             dataType: 'text',
         }).done(successFunctionOne);
         $.ajax({
@@ -26,11 +26,11 @@
     function successFunctionOne(data){
         // console.log(data)
         $('#one').empty().append(data)
-        if(midfinger != data){
+        if(Finger != data){
             //update as it is detected
             $('#heading').empty().append("One")
         }
-        midfinger = data
+        Finger = data
     }
     function successFunctionPerson(data){
         $('#person').empty().append(data)
@@ -150,7 +150,7 @@
 <!--<script>-->
 <!--    function fetchData(){-->
 <!--        $.ajax({-->
-<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/MidFinger.txt',-->
+<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/Finger.txt',-->
 <!--            dataType: 'text',-->
 <!--        }).done(successFunctionOne);-->
 <!--        $.ajax({-->

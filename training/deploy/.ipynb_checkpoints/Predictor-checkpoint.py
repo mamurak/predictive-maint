@@ -12,7 +12,7 @@ class Predictor(object):
     
     def __init__(self):
         self.loaded = False
-        self.labels = ["Background","Person","MidFinger"]#["Blocked","Blured","Changed_View","Normal", "Others"]
+        self.labels = ["Background","Person","Finger"]#["Blocked","Blured","Changed_View","Normal", "Others"]
     def load(self):
 
         print("Loading model",os.getpid())

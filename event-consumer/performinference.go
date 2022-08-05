@@ -96,9 +96,9 @@ func postpayload(sp *seldonpayload) (string, error) {
 	} else if strings.Contains(body, "Background") {
 		fmt.Printf("\nBACKGROUND\n")
 		return "Background", nil
-	} else if strings.Contains(body, "MidFinger") {
-		fmt.Printf("\nMIDFINGER\n")
-		return "MidFinger", nil
+	} else if strings.Contains(body, "Finger") {
+		fmt.Printf("\nFinger\n")
+		return "Finger", nil
 	}
 
 	return "", errors.New("no classification found")

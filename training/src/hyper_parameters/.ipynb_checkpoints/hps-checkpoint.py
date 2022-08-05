@@ -11,7 +11,7 @@ def get_hyper_paras():
     SPLITE_RATE = .2
     
 #     OUTPUT_FEATURE_NAME = ["Blocked","Blured","Changed_View","Normal", "Others"]
-    OUTPUT_FEATURE_NAME = ["Background","Person","MidFinger"]
+    OUTPUT_FEATURE_NAME = ["Background","Person","Finger"]
 #     LOSS_WEIGHTS = [10,2,1]
     ### Model Related info
     BATCH_SIZE  = 32
