@@ -28,11 +28,18 @@ def get_hyper_paras():
     os.environ["MODEL_NAME"] = 'abn-det-demo'
     os.environ["MODEL_VERSION"] = "1"
     base, sourceRepoName = os.path.split(os.getcwd())
-    os.environ['SAVE_PATH'] = base+'/deploy/'
-    os.environ['DATA_PATH'] = base +'/data/raw/data/'
+    
+    
 
-    os.environ['MODEL_PATH'] = base+'/deploy/model.h5'
-    ##### Reand and Deploy Related Info
+    print (base +"----"+ sourceRepoName)
+
+
+    base = os.environ['REPO_PATH']
+    
+    os.environ['SAVE_PATH'] = base +'/training/deploy/'
+    os.environ['DATA_PATH'] = base +'/training/data/raw/data/'
+
+    os.environ['MODEL_PATH'] = base+'/training/deploy/model.h5'
     
     
     
