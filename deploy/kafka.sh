@@ -7,9 +7,7 @@
 # 3) Create a Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka is located
 #    Do that here:
 #    http://console.redhat.com
-# 4) Using the RHOAS CLI, login to your Red Hat SaaS service. To do that, run the following, 
-#    entering your credentials just created, and following the instructions to login.
-#    rhoas login
+
 
 
 KAFKA_NAME='kafka-rocks'
@@ -59,7 +57,7 @@ echo "$CLIENT_SECRET"
 rhoas service-account list | grep "${KAFKA_NAME}-service-account"
 
 #rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix '*'  --group all  -y
-rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix 'video-stream'  --group all  -y
-
+#rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix 'video-stream'  --group all  -y
+rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix  "${TOPIC_NAME}" --group all  -y
 
 
