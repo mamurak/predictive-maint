@@ -23,9 +23,11 @@ export REPO_HOME=`pwd`
 ## 3 - Setup Kafka Cluster on Red Hat OpenShift Streams for Apache Kafka (RHOSAK)
 In this section, we're going to automate the configuration of your Kafka streaming service
  - to which images will be sent from your laptop in realtime
- - and from which those images will be pulled for your inferencing application on OpenShift, also in realtime.
+ - and from which those images will be pulled for your inferencing application on OpenShift, also in realtime
+ - there are a few prerequisites to run this automation script, ***kafka.sh*** below
 
-First, run this to download the Red Hat OpenShift Application Services (RHOAS) Command Line Interface (CLI)
+### Prerequisite 1 - RHOAS CLI
+Run this to download the Red Hat OpenShift Application Services (RHOAS) Command Line Interface (CLI)
 ```
 cd $REPO_HOME
 curl -o- https://raw.githubusercontent.com/redhat-developer/app-services-cli/main/scripts/install.sh | bash
@@ -34,42 +36,56 @@ curl -o- https://raw.githubusercontent.com/redhat-developer/app-services-cli/mai
 You should see a confirmation message, including the location the CLI was installed to:
 ![images/2-setup/image0-1-terminal.png](images/2-setup/image0-1-terminal.png)
 
-Next, you need to add that to your path - e.g. on a Mac:
+Now, you need to add that to your path - e.g. on a Mac:
 ```
 export PATH=$PATH:/Users/<INSERT YOUR USERNAME HERE>/bin
 ```
 in my case:
 ![images/2-setup/image0-2-export-path.png](images/2-setup/image0-2-export-path.png)
 
+### Prerequisite 2 - a Red Hat Account
 Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
 
-Now, using the RHOAS CLI in a terminal on your laptop, login to your Red Hat SaaS service, by running the following, entering your credentials just created, and following the instructions to login.
+### Prerequisite 3 - JQ, the lightweight command-line JSON processor.
+Install this on your laptop, e.g. in my case on a Mac, I needed to run this in order to run the command:
 ```
-rhoas login
+brew install jq
 ```
-i.e. A browser should pop up, prompting you to login again to **https://console.redhat.com**. 
-Login using your *console.redhat.com* credentials
 
-A confirmation page like the following will appear on your browser
+### Prerequisite 4 - Remove credentials.json if you ran ***kafka.sh*** before.
+If this is your first time to run ***kafka.sh***, ignore this step.
+
+Otherwise run the following:
+```
+rm $REPO_HOME/deploy/credentials.json
+```
+
+### Prerequisite 5 - Install the **Go** programming language on your laptop
+In a terminal on your laptop, install the **Go** programming language if you don't have it already. Instructions here: https://go.dev/doc/install.
+
+In my case on a Mac, I just needed to run:
+```
+brew install go
+brew install opencv
+```
+
+
+### Run Kafka automation script
+Now, using ta terminal on your laptop, run the following
+```
+cd $REPO_HOME/deploy
+sh kafka.sh
+```
+
+You'll be prompted login to your Red Hat Account (you set up previosly). A confirmation page like the following will appear on your browser
 ![images/2-setup/image0-3-Login-confirmation-browser.png](images/2-setup/image0-3-Login-confirmation-browser.png) 
 
 ... as well as confirmation on the terminal:
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
-# TO DO FIX THIS - item 2
-In my case on a Mac, I needed to run this in order to run the coommand following it:
-```
-brew install jq
-```
+This script will take several minutes to complete. Keep the terminal open, allowing it to continue the Kafka configuration. 
+Feel free to move to the section below ***4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 10 minutes
 
-# TO DO DELETE credentials.json - item 3
-
-In the same terminal on your laptop, navigate to the deploy folder in this repository and run the kafka configuration shell script
-```
-cd $REPO_HOME/deploy
-sh kafka.sh
-```
-This will take several minutes. Keep the terminal open, allowing it to continue the Kafka configuration. 
 
 ### Confirm your Kafka installation
 Come back in 10 minutes to check it has completed successfully.
@@ -149,12 +165,7 @@ oc delete limits a-predictive-maint-$USER-core-resource-limits
 
 12. Back on OpenShift, choose **YAML view** and replace the default YAML with what you copied in the previous step. Click **Create**
  ![images/2-setup/image29.png](images/2-setup/image29.png)
- A few minutes this should be complete.
-
-
-# TO DO FIX THIS - item 5 
-Explain multiple pods will appear
-
+ A few minutes this should be complete. We have configured this so approximately 20 pods are instantiated. This is to ensure the AI program responds very quickly to changing images sent from your laptop.
 
 ### Install Minio, our lightweight Object Storage implementation
 
@@ -195,48 +206,19 @@ you'll need to configure each with various ENVIROMENT variables.
 
 They're summarised here in a generalised format:
 ```
-MINIO_USER="minio"
-MINIO_PASSWORD="minio123"
 SASL_USERNAME="<SASL_USERNAME recorded above>"
 SASL_PASSWORD="<SASL_PASSWORD recorded above>"
 KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
-GROUP_ID="imageclassification"
 MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
-PARALLEL_INFERENCE=30
-PROMETHEUS_SERVER=localhost:9090
-MODEL_URL="http://model-1-pred-demo:8000/api/v1.0/predictions"
-```
 
-And they're summarised here with my specific examples:
-```
-MINIO_USER="minio"
-MINIO_PASSWORD="minio123"
-SASL_USERNAME="fe62774f-6308-48d1-954a-d75e43eda326"
-SASL_PASSWORD="cfc764aa-8790-4fad-9086-138280dad297"
-KAFKA_BROKER="tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443"
-GROUP_ID="imageclassification"
-MINIO_SERVER="minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com"
-PARALLEL_INFERENCE=30
-PROMETHEUS_SERVER=localhost:9090
-MODEL_URL="export MODEL_URL="http://model-1-pred-demo:8000/api/v1.0/predictions"
-```
-
-Take a note of the four that vary (ones you recorded above). We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
+Take a note of these four values, that are specific to you as a user. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
 
 
 ## 6 - Setup Client Application to capture real-time images from your webcam
 
 # TODO - REPLACE WITH VIRTUAL BOX
 
-We need to set up the application on your laptop that captures images in realtime from your webcam and pushes them to the ***vieo-stream*** Kafka topic you created earlier - from which the inferencing application will pull them.
-
-In a terminal on your laptop, install the **Go** programming language if you don't have it already. Instructions here: https://go.dev/doc/install.
-
-In my case on a Mac, I just needed to run:
-```
-brew install go
-brew install opencv
-```
+We need to set up the application on your laptop that captures images in realtime from your webcam and pushes them to the ***video-stream*** Kafka topic you created earlier - from which the inferencing application will pull them.
 
 Now change directory to the *event-producer* directory in the repo code cloned at the beginning.
 ```
