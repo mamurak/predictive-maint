@@ -247,7 +247,7 @@ We have a simple OpenShift based application that
   
 We simply need to configure it ***YOUR_ENVIRONMENT_VARIABLES*** that you set up previously.
 
-On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see placeholders for these 4 values (i.e.  ***YOUR_ENVIRONMENT_VARIABLES*** above). Fill them in and **Save the file** (e.g. as shown with mine).
+On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see placeholders for these 4 values (i.e.  ***YOUR_ENVIRONMENT_VARIABLES*** above). Fill them in and **Save the file** (e.g. as shown with mine - your actual values will be different).
 ![images/2-setup/image36.png](images/2-setup/image36.png)
 
 ## 8 - Configure your simple HTML dashboard that records a count of the objects it sees
