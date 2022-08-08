@@ -210,6 +210,7 @@ SASL_USERNAME="<SASL_USERNAME recorded above>"
 SASL_PASSWORD="<SASL_PASSWORD recorded above>"
 KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
 MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
+```
 
 Take a note of these four values, that are specific to you as a user. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
 
