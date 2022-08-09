@@ -5,7 +5,7 @@ You instrutor will supply these to you in the Web Meeting Chat. We'll refer to t
 ```
 OPENSHIFT_CLUSTER_URL
 YOUR_OPENSHIFT_USERNAME
-YOUR_OPENSHIFT_PROJECT
+YOUR_OPENSHIFT_INFERENCE_PROJECT
 ```
 
 ### Prerequisite 2 - a Red Hat Account
@@ -91,12 +91,12 @@ and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***v
 
 ### Login to your OpenShift cluster 
 1. Log on to OpenShift - by hitting the URL ***OPENSHIFT_CLUSTER_URL*** you got off the Web Meeting Chat earlier. You'll see this screen. Click **openshift-users** 
-![images/2-setup/image8.png](images/2-setup/image8.png)
+![images/2-setup/image40.png](images/2-setup/image40.png)
 2. Enter   
    - the value for ***YOUR_OPENSHIFT_USERNAME*** you got earlier for your username
    - ***openshift*** for your password 
    - 
-YOUR_OPENSHIFT_PROJECT
+YOUR_OPENSHIFT_INFERENCE_PROJECT
 
 1. Click the *Perspective* dropdown list box
 2. Click the *Administrator* perspective\
