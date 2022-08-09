@@ -122,18 +122,26 @@ Seldon is an awesome tool to expose the model behind a RESTful API.
    oc project <insert YOUR_OPENSHIFT_INFERENCE_PROJECT here>
    ```
    i.e. in my case, as I'm user30:
-![images/2-setup/image42.png](images/2-setup/image42.png)   
-2. Create a new project using the terminal and delete any limits that get applied to your project. 
-***NOTE you should have already got ask your instructor what your USER value should be***
-```
-export USER=<ASK INSTRUCTOR>
-oc project a-predictive-maint-$USER
-oc delete limits a-predictive-maint-$USER-core-resource-limits
-```
-![images/2-setup/image20.png](images/2-setup/image20.png)
 
-2. Click your new project on the GUI
+![images/2-setup/image42.png](images/2-setup/image42.png) 
+
+2. Run the following
+  ```
+   oc apply -f $REPO_HOME/deploy/Seldon-Deployment.yaml
+   ```
+
+3. Now let's verify this Seldon deployment you just did on the OpenShift web console. First, click your new project on the GUI
 ![images/2-setup/image21.png](images/2-setup/image21.png)
+
+
+
+
+# TODO - RESUME HERE
+
+
+
+
+
 3. Click **Operators > Operator Hub** (ensuring your project is selected on top - though ypur project name will probably be different)
    ![images/2-setup/image22.png](images/2-setup/image22.png)
    OpenShift displays the operator catalogue.  
