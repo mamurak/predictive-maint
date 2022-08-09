@@ -117,7 +117,13 @@ Separately, keep a note of the 2 values for
 
 Seldon is an awesome tool to expose the model behind a RESTful API.
 
-1. Create a new project using the terminal and delete any limits that get applied to your project. 
+1. First you'll need to select your project inside the terminal window. Run the following replacing ***YOUR_OPENSHIFT_INFERENCE_PROJECT*** with yours
+   ```
+   oc project <insert YOUR_OPENSHIFT_INFERENCE_PROJECT here>
+   ```
+   i.e. in my case, as I'm user30:
+   
+2. Create a new project using the terminal and delete any limits that get applied to your project. 
 ***NOTE you should have already got ask your instructor what your USER value should be***
 ```
 export USER=<ASK INSTRUCTOR>
