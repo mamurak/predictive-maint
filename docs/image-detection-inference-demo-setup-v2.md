@@ -122,7 +122,7 @@ Seldon is an awesome tool to expose the model behind a RESTful API.
    oc project <insert YOUR_OPENSHIFT_INFERENCE_PROJECT here>
    ```
    i.e. in my case, as I'm user30:
-   
+![images/2-setup/image42.png](images/2-setup/image42.png)   
 2. Create a new project using the terminal and delete any limits that get applied to your project. 
 ***NOTE you should have already got ask your instructor what your USER value should be***
 ```
