@@ -40,10 +40,43 @@ export REPO_HOME=`pwd`
    OpenShift prompts for the operator configuration details.   
    <img src="./images/4-admin-setup/install-2.png" alt="drawing" width="500"/>  
 9. Accept all defaults and click **Install**\
-   OpenShift installs the operator and displays a diaglog box once complete.  
-   <img src="./images/4-admin-setup/install-3.png" alt="drawing" width="500"/>
-10. Click **View Operator**  
-    OpenShift displays the operator details.   
-   <img src="./images/4-admin-setup/install-4.png" alt="drawing" width="500"/>  
+   OpenShift installs the operator and displays a dialog box once complete. 
 
 The Open Data Hub Operator is now installed. 
+
+## Install the Seldon Operator cluster wide
+
+1. Click **Operators > Operator Hub**. Click the *Filter by keybord* text box and type *seldon*
+   ![images/2-setup/image39.png](images/2-setup/image39.png)
+   OpenShift displays the operator catalogue's **Community Seldon Operator** tile.
+
+
+2. OpenShift displays a community operator warning. Accept it by **clicking *Continue***.
+
+3. OpenShift displays the operator details. Click **Install**   
+ ![images/2-setup/image24.png](images/2-setup/image24.png)     
+4. OpenShift prompts for the operator configuration details. Accept all defaults - ensuring  ***All namespaces on the cluster (default)*** is selected and click **Install**
+ ![images/2-setup/image25.png](images/2-setup/image25.png)
+   
+5. OpenShift installs the operator and displays a confirmation box once complete a few minutes later.  
+
+The Seldon Operator is now installed. 
+
+
+## Configure and Add Workshop users
+
+In this section, we'll configure 30 users. Modify script if you need a different number of users.
+
+1. In a terminal window, type the following commands:
+```
+cd $REPO_HOME/setup
+./setup-users.sh
+```
+
+After this script, both **_opentlc-mgr_** and **_user29_** have cluster-admin access.
+
+If you need to create users with different credentials consult [this blog](https://medium.com/kubelancer-private-limited/create-users-on-openshift-4-dc5cfdf85661) - on which these instructions are based.
+
+
+
+
