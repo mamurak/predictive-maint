@@ -55,7 +55,7 @@ spec:
             - name: "GROUP_ID"
               value: "imageclassification"
             - name: "MINIO_SERVER"
-              value: "http://minio-ml-workshop:9000"
+              value: "minio-ml-workshop:9000"
             - name: "PARALLEL_INFERENCE"
               value: "20"
             - name: "PROMETHEUS_SERVER"
