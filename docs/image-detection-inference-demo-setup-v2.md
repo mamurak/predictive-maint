@@ -25,13 +25,13 @@ YOUR_OPENSHIFT_INFERENCE_PROJECT
 ```
 Once these there are complete, you're ready to begin. 
 
-## 1 Open a terminal inside your virtual box. 
+## 1 - Open a terminal inside your virtual box. 
 
 Open a terminal in the virtual box. 
 # TODO INSTRUCTIONS TO GET A COMMAND WINDOW IN THE VIRTUAL BOX
 
 
-## 2 Download this Github repository, for your source code, scripts, yaml etc
+## 2 - Download this Github repository, for your source code, scripts, yaml etc
 
 Using the example below:   
 1. Clone (or fork) this repo.
@@ -51,9 +51,7 @@ In this section, we're going to automate the configuration of your Kafka streami
  - those same images will be pulled in realtime for your inferencing application on OpenShift
 
 
-
-## 4 Run Kafka automation script
-Now, using a terminal inside your virtual box, run the following
+Now, using a terminal inside your virtual box, run the following Kafka automation script
 ```
 cd $REPO_HOME/deploy
 sh kafka.sh
@@ -66,7 +64,7 @@ You'll be prompted login to your Red Hat Account (you set up previosly). A confi
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
 This script will take several minutes to complete. Keep the terminal open, allowing it to continue the Kafka configuration. 
-Feel free to move to the section below ***5 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 10 minutes
+Feel free to move to the section below ***4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 10 minutes
 
 
 #### Confirm your Kafka installation
@@ -89,39 +87,41 @@ and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***v
 ![images/2-setup/image8.png](images/2-setup/image8.png)
 
 
-## 5 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
+## 4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
 
-### Login to your OpenShift cluster 
+#### Login to your OpenShift cluster 
 1. Log on to OpenShift - by hitting the URL ***OPENSHIFT_CLUSTER_URL*** you got off the Web Meeting Chat earlier. You'll see this screen. Click **openshift-users** 
 ![images/2-setup/image40.png](images/2-setup/image40.png)
-2. Enter   
+2. Enter these values and click **Log On**   
    - the value for ***YOUR_OPENSHIFT_USERNAME*** you got earlier for your username
    - ***openshift*** for your password 
-   - 
-YOUR_OPENSHIFT_INFERENCE_PROJECT
+ ![images/2-setup/image41.png](images/2-setup/image41.png) 
 
-1. Click the *Perspective* dropdown list box
-2. Click the *Administrator* perspective\
+
+3. Click the *Perspective* dropdown list box
+4. Click the *Administrator* perspective\
    OpenShift changes the user interface to the Adminstrator perspective.
 ![images/2-setup/image17.png](images/2-setup/image17.png)
-4. Click your username on the top right of the screen, then click *Copy Login Command*
+5. Click your username on the top right of the screen, then click *Copy Login Command*
 ![images/2-setup/image18.png](images/2-setup/image18.png)
-5.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
+6.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
 ![images/2-setup/image19.png](images/2-setup/image19.png)
 Separately, keep a note of the 2 values for
- - OPENSHIFT_API_LOGIN_TOKEN
- - OPENSHIFT_API_LOGIN_SERVER
-You'll need them for the training demo/workshop below
+     - OPENSHIFT_API_LOGIN_TOKEN
+     - OPENSHIFT_API_LOGIN_SERVER
+   You'll need them for the training demo/workshop below
 
-### Install the Seldon Deployment
+7. Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning
+
+#### Install the Seldon Deployment
 
 Seldon is an awesome tool to expose the model behind a RESTful API.
 
 1. Create a new project using the terminal and delete any limits that get applied to your project. 
-***NOTE ask your instructor what your USER value should be***
+***NOTE you should have already got ask your instructor what your USER value should be***
 ```
 export USER=<ASK INSTRUCTOR>
-oc new-project a-predictive-maint-$USER
+oc project a-predictive-maint-$USER
 oc delete limits a-predictive-maint-$USER-core-resource-limits
 ```
 ![images/2-setup/image20.png](images/2-setup/image20.png)
