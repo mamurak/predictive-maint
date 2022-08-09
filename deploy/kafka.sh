@@ -60,8 +60,15 @@ rhoas service-account list | grep "${KAFKA_NAME}-service-account"
 #rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix 'video-stream'  --group all  -y
 rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix  "${TOPIC_NAME}" --group all  -y
 
+#print the status
+rhoas status -o json
 
 export KAFKA_BROKER_URL=$(rhoas status -o json  | jq --raw-output '.kafka.bootstrap_server_host')
 echo "$KAFKA_BROKER_URL"
 
+#change the consumer deployment yaml file
+
+sed -f "s/SASL_USERNAME_VALUE/${CLIENT_ID}/g" consumer-deployment.yaml
+sed -f "s/SASL_PASSWORD_VALUE/${CLIENT_SECRET}/g" consumer-deployment.yaml
+sed -f "s/KAFKA_BROKER_VALUE/${KAFKA_BROKER_URL}/g" consumer-deployment.yaml
 
