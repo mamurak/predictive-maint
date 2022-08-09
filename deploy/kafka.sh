@@ -61,3 +61,7 @@ rhoas service-account list | grep "${KAFKA_NAME}-service-account"
 rhoas kafka acl grant-access --consumer --producer --service-account "${CLIENT_ID}" --topic-prefix  "${TOPIC_NAME}" --group all  -y
 
 
+KAFKA_BROKER_URL=$(rhoas status -o json  | jq --raw-output '.kafka.bootstrap_server_host')
+echo "$KAFKA_BROKER_URL"
+
+
