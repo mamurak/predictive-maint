@@ -1,12 +1,35 @@
 # Setting up the Inference Demo
 
-## 1 - Download the OpenShift CLI
+### Prerequisite 1 - an OpenShift cluster, a Username and an OpenShift project to work in
+You instrutor will supply these to you in the Web Meeting Chat. We'll refer to these below as
+```
+OPENSHIFT_CLUSTER_URL
+YOUR_OPENSHIFT_USERNAME
+YOUR_OPENSHIFT_PROJECT
+```
 
-Navigate to [OpenShift CLI Download Page](https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html). (use the newest version - selectable on the top of the page)
+### Prerequisite 2 - a Red Hat Account
+Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
 
-Follow the instructions to download the ***oc*** client and add it to your system path.
+### Prerequisite 3 - Download the edge-based virtual box. 
+This virtual machine, contains all of the libraries, binaries, command line interfaces etc, that you'll need to 
+- interact with, setup and configure your Kafka Streaming service
+- interact with, setup and configure your OpenShift based applications, which will - 
+  - make the inference calls to the AI prediction servvice using pull ed realtime from your Kafka Streaming service
+  - push the results to your own OpenShift based Object Store S3 implemenation
+- retrieve images from your webcam feed in realtime and push them to your Kafka Streaming service
 
-## 2 - Download the Workshop Files
+Your instructor will paste URL from which you pull the virtual box in the web meeting chat. Open that URL to begin the download.
+
+Once the download is complete, you're ready to begin. 
+
+## 1 Open a terminal inside your virtual box. 
+
+Open a terminal in the virtual box. 
+# TODO INSTRUCTIONS TO GET A COMMAND WINDOW IN THE VIRTUAL BOX
+
+
+## 2 Download this Github repository, for your source code, scripts, yaml etc
 
 Using the example below:   
 1. Clone (or fork) this repo.
@@ -21,57 +44,14 @@ export REPO_HOME=`pwd`
 
 
 ## 3 - Setup Kafka Cluster on Red Hat OpenShift Streams for Apache Kafka (RHOSAK)
-In this section, we're going to automate the configuration of your Kafka streaming service
- - to which images will be sent from your laptop in realtime
- - and from which those images will be pulled for your inferencing application on OpenShift, also in realtime
- - there are a few prerequisites to run this automation script, ***kafka.sh*** below
-
-### Prerequisite 1 - RHOAS CLI
-Run this to download the Red Hat OpenShift Application Services (RHOAS) Command Line Interface (CLI)
-```
-cd $REPO_HOME
-curl -o- https://raw.githubusercontent.com/redhat-developer/app-services-cli/main/scripts/install.sh | bash
-```
-
-You should see a confirmation message, including the location the CLI was installed to:
-![images/2-setup/image0-1-terminal.png](images/2-setup/image0-1-terminal.png)
-
-Now, you need to add that to your path - e.g. on a Mac:
-```
-export PATH=$PATH:/Users/<INSERT YOUR USERNAME HERE>/bin
-```
-in my case:
-![images/2-setup/image0-2-export-path.png](images/2-setup/image0-2-export-path.png)
-
-### Prerequisite 2 - a Red Hat Account
-Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
-
-### Prerequisite 3 - JQ, the lightweight command-line JSON processor.
-Install this on your laptop, e.g. in my case on a Mac, I needed to run this in order to run the command:
-```
-brew install jq
-```
-
-### Prerequisite 4 - Remove credentials.json if you ran ***kafka.sh*** before.
-If this is your first time to run ***kafka.sh***, ignore this step.
-
-Otherwise run the following:
-```
-rm $REPO_HOME/deploy/credentials.json
-```
-
-### Prerequisite 5 - Install the **Go** programming language on your laptop
-In a terminal on your laptop, install the **Go** programming language if you don't have it already. Instructions here: https://go.dev/doc/install.
-
-In my case on a Mac, I just needed to run:
-```
-brew install go
-brew install opencv
-```
+In this section, we're going to automate the configuration of your Kafka streaming service and slot the values from ***your*** new Kafka configuration into various source files so they're ready to use later. Your Kafka streaming service is where
+ - images will be sent from your laptop in realtime
+ - those same images will be pulled in realtime for your inferencing application on OpenShift
 
 
-### Run Kafka automation script
-Now, using ta terminal on your laptop, run the following
+
+## 4 Run Kafka automation script
+Now, using a terminal inside your virtual box, run the following
 ```
 cd $REPO_HOME/deploy
 sh kafka.sh
@@ -84,10 +64,10 @@ You'll be prompted login to your Red Hat Account (you set up previosly). A confi
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
 This script will take several minutes to complete. Keep the terminal open, allowing it to continue the Kafka configuration. 
-Feel free to move to the section below ***4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 10 minutes
+Feel free to move to the section below ***5 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 10 minutes
 
 
-### Confirm your Kafka installation
+#### Confirm your Kafka installation
 Come back in 10 minutes to check it has completed successfully.
 i.e. do the following:
 - Scan your terminal output - it should have run to completion with no errors.
@@ -96,7 +76,7 @@ i.e. do the following:
 and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***video-stream***, and configuration under the Access tab have been added.
 
 
-### Get your Kafka Bootstrap server details
+#### Get your Kafka Bootstrap server details
 
 - Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, (or just hit [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)). 
 - Select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu
@@ -107,12 +87,19 @@ and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***v
 ![images/2-setup/image8.png](images/2-setup/image8.png)
 
 
-## 4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
+## 5 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
 
 ### Login to your OpenShift cluster 
-1. Log on to OpenShift as a Cluster Administrator. (For RHPDS this is opentlc-mgr.)
-2. Click the *Perspective* dropdown list box
-3. Click the *Administrator* perspective\
+1. Log on to OpenShift - by hitting the URL ***OPENSHIFT_CLUSTER_URL*** you got off the Web Meeting Chat earlier. You'll see this screen. Click **openshift-users** 
+![images/2-setup/image8.png](images/2-setup/image8.png)
+2. Enter   
+   - the value for ***YOUR_OPENSHIFT_USERNAME*** you got earlier for your username
+   - ***openshift*** for your password 
+   - 
+YOUR_OPENSHIFT_PROJECT
+
+1. Click the *Perspective* dropdown list box
+2. Click the *Administrator* perspective\
    OpenShift changes the user interface to the Adminstrator perspective.
 ![images/2-setup/image17.png](images/2-setup/image17.png)
 4. Click your username on the top right of the screen, then click *Copy Login Command*
@@ -124,9 +111,9 @@ Separately, keep a note of the 2 values for
  - OPENSHIFT_API_LOGIN_SERVER
 You'll need them for the training demo/workshop below
 
-### Install the Seldon Operator and Seldon Deployment
+### Install the Seldon Deployment
 
-The Seldon operator is required to expose the model behind a RESTful API.
+Seldon is an awesome tool to expose the model behind a RESTful API.
 
 1. Create a new project using the terminal and delete any limits that get applied to your project. 
 ***NOTE ask your instructor what your USER value should be***
