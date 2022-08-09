@@ -15,7 +15,7 @@ Next, if you don't already have one, set up a free Red Hat Account - where the S
 This virtual machine, contains all of the libraries, binaries, command line interfaces etc, that you'll need to 
 - interact with, setup and configure your Kafka Streaming service
 - interact with, setup and configure your OpenShift based applications, which will - 
-  - make the inference calls to the AI prediction servvice using pull ed realtime from your Kafka Streaming service
+  - make the inference calls to the AI prediction service using pulled in realtime from your Kafka Streaming service
   - push the results to your own OpenShift based Object Store S3 implemenation
 - retrieve images from your webcam feed in realtime and push them to your Kafka Streaming service
 
