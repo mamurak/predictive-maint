@@ -5,7 +5,7 @@ metadata:
   labels:
     app: image-predictor-consumer
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: image-predictor-consumer
@@ -28,7 +28,7 @@ spec:
             timeoutSeconds: 1
             periodSeconds: 5
             successThreshold: 1
-            failureThreshold: 10
+            failureThreshold: 50
           terminationMessagePath: /dev/termination-log
           name: image-predictor-consumer
           livenessProbe:
@@ -40,7 +40,7 @@ spec:
             timeoutSeconds: 1
             periodSeconds: 5
             successThreshold: 1
-            failureThreshold: 10
+            failureThreshold: 50
           env:
             - name: "MINIO_USER"
               value: "minio"
@@ -72,7 +72,7 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 0
-      maxSurge: 25%
+      maxUnavailable: 1
+      maxSurge: 100%
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
