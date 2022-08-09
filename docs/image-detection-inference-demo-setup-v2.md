@@ -1,17 +1,7 @@
 # Setting up the Inference Demo
 
-### Prerequisite 1 - an OpenShift cluster, a Username and an OpenShift project to work in
-You instrutor will supply these to you in the Web Meeting Chat. We'll refer to these below as
-```
-OPENSHIFT_CLUSTER_URL
-YOUR_OPENSHIFT_USERNAME
-YOUR_OPENSHIFT_INFERENCE_PROJECT
-```
 
-### Prerequisite 2 - a Red Hat Account
-Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
-
-### Prerequisite 3 - Download the edge-based virtual box. 
+### Prerequisite 1 - Download the edge-based virtual box. 
 This virtual machine, contains all of the libraries, binaries, command line interfaces etc, that you'll need to 
 - interact with, setup and configure your Kafka Streaming service
 - interact with, setup and configure your OpenShift based applications, which will - 
@@ -21,7 +11,19 @@ This virtual machine, contains all of the libraries, binaries, command line inte
 
 Your instructor will paste URL from which you pull the virtual box in the web meeting chat. Open that URL to begin the download.
 
-Once the download is complete, you're ready to begin. 
+
+### Prerequisite 2 - a Red Hat Account
+Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
+
+
+### Prerequisite 3 - an OpenShift cluster, a Username and an OpenShift project to work in
+You instrutor will supply these to you in the Web Meeting Chat. We'll refer to these below as
+```
+OPENSHIFT_CLUSTER_URL
+YOUR_OPENSHIFT_USERNAME
+YOUR_OPENSHIFT_INFERENCE_PROJECT
+```
+Once these there are complete, you're ready to begin. 
 
 ## 1 Open a terminal inside your virtual box. 
 
