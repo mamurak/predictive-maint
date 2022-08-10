@@ -68,7 +68,7 @@ echo "$KAFKA_BROKER_URL"
 
 #change the consumer deployment yaml file
 
-sed -f "s/SASL_USERNAME_VALUE/${CLIENT_ID}/g" consumer-deployment.yaml
-sed -f "s/SASL_PASSWORD_VALUE/${CLIENT_SECRET}/g" consumer-deployment.yaml
-sed -f "s/KAFKA_BROKER_VALUE/${KAFKA_BROKER_URL}/g" consumer-deployment.yaml
+sed -i "s/SASL_USERNAME_VALUE/${CLIENT_ID}/g" consumer-deployment.yaml
+sed -i "s/SASL_PASSWORD_VALUE/${CLIENT_SECRET}/g" consumer-deployment.yaml
+sed -i "s/KAFKA_BROKER_VALUE/${KAFKA_BROKER_URL}/g" consumer-deployment.yaml
 
