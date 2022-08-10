@@ -3,14 +3,20 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script>
-    const minio_location = '[CHANGE_ME_FULL_MINIO_API_ROUTE]/image-prediction/'
-    var Finger = 0
+<script >
+    var minio_location = ""
+    var midfinger = 0
     var background = 0
     var person = 0
+
+    function start(){
+        minio_location = $('#minioserver').val()
+        setInterval(fetchData, 500);
+    }
+
     function fetchData(){
         $.ajax({
-            url: minio_location +  'Finger.txt',
+            url: minio_location +  'MidFinger.txt',
             dataType: 'text',
         }).done(successFunctionOne);
         $.ajax({
@@ -26,11 +32,11 @@
     function successFunctionOne(data){
         // console.log(data)
         $('#one').empty().append(data)
-        if(Finger != data){
+        if(midfinger != data){
             //update as it is detected
             $('#heading').empty().append("One")
         }
-        Finger = data
+        midfinger = data
     }
     function successFunctionPerson(data){
         $('#person').empty().append(data)
@@ -52,9 +58,15 @@
     }
 
 
-    setInterval(fetchData, 500);
+
 </script>
 <style>
+    #minioserverdiv{
+
+        margin: 0 auto;
+        text-align: center;
+
+    }
 
     * {
         box-sizing: border-box;
@@ -140,94 +152,11 @@
         </div>
     </div>
 </div>
+<div id="minioserverdiv">
+    <input id="minioserver" type="text" value="Type Minio Address Here" />
+    <input type="button" value="Start Fetching" onclick="start()">
+</div>
 </body>
 
 </html>
 
-
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-
-<!--<script>-->
-<!--    function fetchData(){-->
-<!--        $.ajax({-->
-<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/Finger.txt',-->
-<!--            dataType: 'text',-->
-<!--        }).done(successFunctionOne);-->
-<!--        $.ajax({-->
-<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/Person.txt',-->
-<!--            dataType: 'text',-->
-<!--        }).done(successFunctionPerson);-->
-<!--        $.ajax({-->
-<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/Background.txt',-->
-<!--            dataType: 'text',-->
-<!--        }).done(successFunctionBackground);-->
-
-<!--    }-->
-<!--    function successFunctionOne(data){-->
-<!--        // console.log(data)-->
-<!--        $('#one').empty().append(data)-->
-<!--    }-->
-<!--    function successFunctionPerson(data){-->
-<!--        $('#person').empty().append(data)-->
-<!--    }-->
-<!--    function successFunctionBackground(data){-->
-<!--        $('#background').empty().append(data)-->
-<!--    }-->
-
-<!--    function successFunction(data) {-->
-<!--        var allRows = data.split(/\r?\n|\r/);-->
-<!--        var table = '<table>';-->
-<!--        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {-->
-<!--            if (singleRow === 0) {-->
-<!--                table += '<thead>';-->
-<!--                table += '<tr>';-->
-<!--            } else {-->
-<!--                table += '<tr>';-->
-<!--            }-->
-<!--            var rowCells = allRows[singleRow].split(',');-->
-<!--            for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {-->
-<!--                if (singleRow === 0) {-->
-<!--                    table += '<th>';-->
-<!--                    table += rowCells[rowCell];-->
-<!--                    table += '</th>';-->
-<!--                } else {-->
-<!--                    table += '<td>';-->
-<!--                    table += rowCells[rowCell];-->
-<!--                    table += '</td>';-->
-<!--                }-->
-<!--            }-->
-<!--            if (singleRow === 0) {-->
-<!--                table += '</tr>';-->
-<!--                table += '</thead>';-->
-<!--                table += '<tbody>';-->
-<!--            } else {-->
-<!--                table += '</tr>';-->
-<!--            }-->
-<!--        }-->
-<!--        table += '</tbody>';-->
-<!--        table += '</table>';-->
-<!--        $('body').append(table);-->
-<!--    }-->
-
-<!--    setInterval(fetchData, 500);-->
-<!--</script>-->
-
-<!--<body>-->
-<!--<table>-->
-<!--    <tbody>-->
-<!--    <tr>-->
-<!--        <td>One</td>-->
-<!--        <td id="one"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>Person</td>-->
-<!--        <td id="person"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <td>Background</td>-->
-<!--        <td id="background"></td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--</table>-->
-
-<!--</body>-->
