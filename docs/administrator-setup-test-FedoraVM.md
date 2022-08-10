@@ -37,6 +37,10 @@ cp oc  /home/redhat/.local/bin/
 cd ~/predictive-maint/deploy/  
 ./kafka.sh  
 ```
+Save following values that the script prints out (your values will be different):  
+1. SASL_USERNAME="b79e3fdb-4e23-4aad-9150-64a50430fed8"
+2. SASL_PASSWORD="wVLtwYFNduMPqxJYa2ATMtJSp7gZDFgU"
+3. KAFKA_BROKER="kafka-rock-cbpg-usun--h--bua-dg.bf2.kafka.rhcloud.com:443"
 
 ## Deployments on Openshift
 > login to oc cluster  
@@ -60,11 +64,11 @@ export CLIENT_SECRET=$(cat credentials.json | jq  --raw-output '.clientSecret')
 export KAFKA_BROKER_URL=$(rhoas status -o json  | jq --raw-output '.kafka.bootstrap_server_host')
 ```
 
- 
+Use your own values below
 ``` sh
-#export SASL_USERNAME="b79e3fdb-4e23-4aad-9150-64a50430fed8"
-#export SASL_PASSWORD="wVLtwYFNduMPqxJYa2ATMtJSp7gZDFgU"
-#export KAFKA_BROKER="kafka-rock-cbpg-usun--h--bua-dg.bf2.kafka.rhcloud.com:443"
+#export SASL_USERNAME="<b79e3fdb-4e23-4aad-9150-64a50430fed8>"
+#export SASL_PASSWORD="<wVLtwYFNduMPqxJYa2ATMtJSp7gZDFgU>"
+#export KAFKA_BROKER="<kafka-rock-cbpg-usun--h--bua-dg.bf2.kafka.rhcloud.com:443>"
 
 cd ~/predictive-maint/event-producer 
 go run .
