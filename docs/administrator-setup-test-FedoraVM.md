@@ -1,28 +1,46 @@
+# On Virtual Box
+1. Install Virtualbox guest additions for linux. 
+- [Outside VM] In VM toolbar, go to Devices->'Insert Guest Addition CD image'. 
+- [Inside VM] Open Files and go to mounted CD. Open it in terminal and run `sudo ./VBoxLinuxAdditions.run`
+2. Install extension pack from https://www.virtualbox.org/wiki/Downloads. You need this to access webcam. Make sure on Mac that VirtualBox can access the Camera
+
+
 # Set up the Fedora VM
+CPU: 4 cores. 
+RAM: 4Gb. 
+Storage: 15 Gb. 
+
+During OS installation create account with following:   
 username: redhat  
 password: redhat  
 
-# Install packages
+# Update and install packages
 ```sh
-sudo dnf install vim  
-sudo dnf install golang opencv*  
-sudo dnf install make automake gcc gcc-c++ kernel-devel  
+sudo dnf update
+```
+
+```sh
+sudo dnf install vim golang opencv* make automake gcc gcc-c++ kernel-devel  
 ```
 
 # Get repo
 ```sh
 git clone https://github.com/odh-labs/predictive-maint.git  
+cd ~
 cd predictive-maint  
 ```
+
 ## Setting up Rhoas cli
 ```sh
 curl -o- https://raw.githubusercontent.com/redhat-developer/app-services-cli/main/scripts/install.sh | bash 
 ``` 
 Open file by running `sudo vim ~/.bash_profile` and add `/home/redhat/.local/bin` at the end of the file    
 
+Test rhoas cli. 
 ``` sh
-rhoas login  
+rhoas version  
 ```
+
 ## Setting up oc cli
 Download `Openshift v4.10 Linux Client ` from `https://access.redhat.com/downloads/content/290/ver=4.10/rhel---8/4.10.26/x86_64/product-software`  
 
@@ -32,15 +50,16 @@ tar xvzf oc-4.10.26-linux.tar.gz
 cp oc  /home/redhat/.local/bin/  
 ```
 
+Test oc cli
+```sh
+oc status
+```
+
 ## Create Kafka instance and update variables in 'consumer-deployment.yaml' file
 ```sh
 cd ~/predictive-maint/deploy/  
 ./kafka.sh  
 ```
-Save following values that the script prints out (your values will be different):  
-1. SASL_USERNAME="b79e3fdb-4e23-4aad-9150-64a50430fed8"
-2. SASL_PASSWORD="wVLtwYFNduMPqxJYa2ATMtJSp7gZDFgU"
-3. KAFKA_BROKER="kafka-rock-cbpg-usun--h--bua-dg.bf2.kafka.rhcloud.com:443"
 
 ## Deployments on Openshift
 > login to oc cluster  
@@ -55,22 +74,18 @@ oc apply -f Seldon-Deployment.yaml
 oc apply -f consumer-deployment.yaml  
 ```
 
-# Start capturing camera feed
-
+## Start capturing camera feed
+Load env variables  
 ```sh
 cd ~/predictive-maint/deploy/
 export CLIENT_ID=$(cat credentials.json | jq  --raw-output '.clientID')
 export CLIENT_SECRET=$(cat credentials.json | jq  --raw-output '.clientSecret')
 export KAFKA_BROKER_URL=$(rhoas status -o json  | jq --raw-output '.kafka.bootstrap_server_host')
 ```
-
-> Run if you get sasl.username not defined error then uncomment 3 lines below and replace with your own values.
-``` sh
-#export SASL_USERNAME="<b79e3fdb-4e23-4aad-9150-64a50430fed8>"
-#export SASL_PASSWORD="<wVLtwYFNduMPqxJYa2ATMtJSp7gZDFgU>"
-#export KAFKA_BROKER="<kafka-rock-cbpg-usun--h--bua-dg.bf2.kafka.rhcloud.com:443>"
-
+Start Capturing camera feed.  
+  
+```sh
 cd ~/predictive-maint/event-producer 
-go run .
+go run -v .
 ```
   
