@@ -83,7 +83,8 @@ export CLIENT_SECRET=$(cat credentials.json | jq  --raw-output '.clientSecret')
 export KAFKA_BROKER_URL=$(rhoas status -o json  | jq --raw-output '.kafka.bootstrap_server_host')
 ```
 Start Capturing camera feed.  
-  
+
+- [Outside VM] In VM toolbar, go to Devices->Webcams and check the Camera ('FaceTime HD Camera' in case of MacOs). 
 ```sh
 cd ~/predictive-maint/event-producer 
 go run -v .
