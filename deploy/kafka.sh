@@ -72,3 +72,10 @@ sed -i "s/SASL_USERNAME_VALUE/${CLIENT_ID}/g" consumer-deployment.yaml
 sed -i "s/SASL_PASSWORD_VALUE/${CLIENT_SECRET}/g" consumer-deployment.yaml
 sed -i "s/KAFKA_BROKER_VALUE/${KAFKA_BROKER_URL}/g" consumer-deployment.yaml
 
+# Mac (sed has peculiarities - use gnu-sed)
+# run: brew install gnu-sed 
+# see: https://blog.birost.com/a?ID=00900-c6ae76a9-d665-4d1a-9fa8-0f962b6385e6 
+# gsed -i "s/SASL_USERNAME_VALUE/${CLIENT_ID}/g" consumer-deployment.yaml
+# gsed -i "s/SASL_PASSWORD_VALUE/${CLIENT_SECRET}/g" consumer-deployment.yaml
+# gsed -i "s/KAFKA_BROKER_VALUE/${KAFKA_BROKER_URL}/g" consumer-deployment.yaml
+
