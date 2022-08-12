@@ -54,7 +54,7 @@ In this section, we're going to automate the configuration of your Kafka streami
 Now, using a terminal inside your virtual box, run the following Kafka automation script
 ```
 cd $REPO_HOME/deploy
-sh kafka.sh
+. ./kafka.sh
 ```
 
 You'll be prompted login to your Red Hat Account (you set up previosly). A confirmation page like the following will appear on your browser
