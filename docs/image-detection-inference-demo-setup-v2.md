@@ -95,7 +95,7 @@ You'll be prompted login to your Red Hat Account (you set up previously). A conf
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
 This script will take several minutes to complete. Keep the terminal open, allowing it to continue the Kafka configuration. 
-Feel free to move to the section below ***4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 10 minutes
+Feel free to move to the section below ***4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 6-7 minutes
 
 
 #### Confirm your Kafka installation
