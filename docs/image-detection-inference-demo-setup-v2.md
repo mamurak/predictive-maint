@@ -1,7 +1,18 @@
 # Setting up the Inference Demo
 
 
-### Prerequisite 1 - Download the edge-based virtual box. 
+### Prerequisite 1 - Install Virtual B and its extension pack.
+Instructions to do it are contained on the [Virtual Box Download page](https://www.virtualbox.org/wiki/Downloads).
+If you are using a Mac and have *Homebrew* installed, these commands are a quick way to do it:
+```
+brew install --cask virtualbox
+```
+and then 
+```
+brew install --cask virtualbox-extension-pack
+```
+
+### Prerequisite 2 - Download and unzip the edge-based virtual box for this workshop. 
 This virtual machine, contains all of the libraries, binaries, command line interfaces etc, that you'll need to 
 - interact with, setup and configure your Kafka Streaming service
 - interact with, setup and configure your OpenShift based applications, which will - 
@@ -9,14 +20,16 @@ This virtual machine, contains all of the libraries, binaries, command line inte
   - push the results to your own OpenShift based Object Store S3 implemenation
 - retrieve images from your webcam feed in realtime and push them to your Kafka Streaming service
 
-Your instructor will paste URL from which you pull the virtual box in the web meeting chat. Open that URL to begin the download.
+Hit this URL to download the virtual box
+# TODO ADD DROPBOX URL
 
+Delpending on your internet speead, this can take several minuites. Once it's complete unzip the file.
 
-### Prerequisite 2 - a Red Hat Account
+### Prerequisite 3 - a Red Hat Account
 Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
 
 
-### Prerequisite 3 - an OpenShift cluster, a Username and an OpenShift project to work in
+### Prerequisite 4 - an OpenShift cluster, a Username and an OpenShift project to work in
 You instrutor will supply these to you in the Web Meeting Chat. We'll refer to these below as
 ```
 OPENSHIFT_CLUSTER_URL
@@ -25,7 +38,19 @@ YOUR_OPENSHIFT_INFERENCE_PROJECT
 ```
 Once these there are complete, you're ready to begin. 
 
-## 1 - Open a terminal inside your virtual box. 
+## 1 - Open virtual box then open a terminal inside your virtual box. 
+On your laptop, open Virtual Box. A screen like this will appear. Click **Import**:
+![images/2-setup/image44.png](images/2-setup/image44.png)
+- keep the source *Local File System*
+- click the file icon
+- navigate to where you unzipped the virtual box earlier
+- select the ***ovf*** file
+- click Open
+![images/2-setup/image45.png](images/2-setup/image45.png)
+
+On the next screen click **Continue**
+![images/2-setup/image46.png](images/2-setup/image46.png)
+
 
 Open a terminal in the virtual box. 
 # TODO INSTRUCTIONS TO GET A COMMAND WINDOW IN THE VIRTUAL BOX
