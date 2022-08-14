@@ -65,7 +65,7 @@ You'll see a screen like this. Click the *App Launcher* menu on the bottom. If y
 Click **terminal**
 ![images/2-setup/image50.png](images/2-setup/image50.png)
 
-The Github repository containing this documentaion you're reading as well as all source code, scripts, yaml that you will need.
+The Github repository containing this documentation you're reading also contains all source code, scripts, yaml etc that you will need to run this workshop.
 We have already cloned this repository into the VM, so you'll just to change directory to it. We'll also set a variable to refer to this directory ***REPO_HOME***. Run the following inside the terminal window:
 ```
 cd predictive-maint
@@ -76,33 +76,19 @@ export REPO_HOME=`pwd`
 SHIFT + CONTROL + v
 ```
 
-## 2 - Download this Github repository, for your 
-
-Using the example below:   
-1. Clone (or fork) this repo.
-2. Change directory into the root directory of the cloned repository **predictive-maint**.  
-3. Create a variable *REPO_HOME* for this directory
-
-```
-git clone https://github.com/odh-labs/predictive-maint.git
-cd predictive-maint
-export REPO_HOME=`pwd`
-```
-
-
-## 3 - Setup Kafka Cluster on Red Hat OpenShift Streams for Apache Kafka (RHOSAK)
+## 2 - Setup Kafka Cluster on Red Hat OpenShift Streams for Apache Kafka (RHOSAK)
 In this section, we're going to automate the configuration of your Kafka streaming service and slot the values from ***your*** new Kafka configuration into various source files so they're ready to use later. Your Kafka streaming service is where
  - images will be sent from your laptop in realtime
  - those same images will be pulled in realtime for your inferencing application on OpenShift
 
 
-Now, using a terminal inside your virtual box, run the following Kafka automation script
+Now, using the terminal inside your virtual box, run the following Kafka automation script
 ```
 cd $REPO_HOME/deploy
 . ./kafka.sh
 ```
 
-You'll be prompted login to your Red Hat Account (you set up previosly). A confirmation page like the following will appear on your browser
+You'll be prompted login to your Red Hat Account (you set up previously). A confirmation page like the following will appear on your browser
 ![images/2-setup/image0-3-Login-confirmation-browser.png](images/2-setup/image0-3-Login-confirmation-browser.png) 
 
 ... as well as confirmation on the terminal:
