@@ -76,3 +76,4 @@ spec:
       maxSurge: 100%
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
+  
