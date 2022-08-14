@@ -166,9 +166,9 @@ Seldon is an awesome tool to expose the model behind a RESTful API.
 3. Click **Seldon Deployment** and notice there is a new one called ***model-1*** whose status is ***Creating***. Come back to this in a few minutes and it should have changed to ***Available***
  ![images/2-setup/image28.png](images/2-setup/image28.png)
 
-12. Back on OpenShift, choose **YAML view** and replace the default YAML with what you copied in the previous step. Click **Create**
- ![images/2-setup/image29.png](images/2-setup/image29.png)
- A few minutes this should be complete. We have configured this so approximately 20 pods are instantiated. This is to ensure the AI program responds very quickly to changing images sent from your laptop.
+4. Navigate to **Workloads > Pods**. This shows your pods or running containers within your project. You should see 30 pods instanciating, each of which should change to status *Running* after a couple of minutes.
+ ![images/2-setup/image54.png](images/2-setup/image54.png)
+
 
 ### Install Minio, our lightweight Object Storage implementation
 
@@ -177,81 +177,45 @@ Seldon is an awesome tool to expose the model behind a RESTful API.
    ```
    oc apply -f $REPO_HOME/deploy/minio-full.yaml
    ```
+   You should be informed of a series of Kubernetes object creations.
+
+2. Now switch to your OpenShift web console again. Navigate to **Workloads > Pods** and filter on *minio*. After a couple of minutes, you should see a running container like so. (ignore any temporary ***CrashBackoff*** status of the other pod).
+ ![images/2-setup/image54.png](images/2-setup/image54.png)
+
+3. Navigate to **Networking > Routes**. Notice there are 2 ***Minio*** routes    
+   - one for the UI 
+   - one for the API (without the ***ui*** suffix)
+ ![images/2-setup/image56.png](images/2-setup/image56.png)
+
+   1. Copy the API one and paste it somewhere for later. We'll refer to this as your ***FULL_MINIO_API_ROUTE***.
+   2. Open the UI one - by clicking on the URL under *Location*. Log in using username/password ***minio*** and ***minio123***. You'll see a bucket called *image-prediction*
+   ![images/2-setup/image57.png](images/2-setup/image57.png)
 
 
-### Setup your Minio Object Storage
-
-## Get your Minio URL (Route)
-1. In OpenShift, move to **Workloads > Pods**. After a few minutes, both your Minio and Seldon pods should be Running and Ready. (ignore any initial errors for the first couple of minutes - they will work themselves out)
-![images/2-setup/image30.png](images/2-setup/image30.png)
-
-2. Navigate back to **Networking > Routes**. Take a note the OpenShift Route for 
-   - the first Minio Route (i.e. the one without ***ui***)
-![images/2-setup/image34.png](images/2-setup/image34.png)
-
-1. We'll need to take note of
-   - FULL_MINIO_API_ROUTE - which is your *Minio API Route* from the previous step ***WITH*** the HTTP protocol
-   ```
-   FULL_MINIO_API_ROUTE
-   http://minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
-   ```
-   - MINIO_API_URL - which is your *Minio API Route* from the previous step - ***WITHOUT*** the HTTP protocol
-   ```
-   YOUR_MINIO_API_URL
-   minio-ml-workshop-a-predictice-maint.apps.cluster-spvql.spvql.sandbox67.opentlc.com
-
-## 5 - Record your Environment Variables
-When you later run 
-1. your edge based webcam image retrieval client
-2. your OpenShift based inference service
-
-you'll need to configure each with various ENVIROMENT variables.
-
-They're summarised here in a generalised format:
-```
-SASL_USERNAME="<SASL_USERNAME recorded above>"
-SASL_PASSWORD="<SASL_PASSWORD recorded above>"
-KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
-MINIO_SERVER="<YOUR_MINIO_API_URL recorded above>"
-```
-
-Take a note of these four values, that are specific to you as a user. We'll refer to these as ***YOUR_ENVIRONMENT_VARIABLES***
+### Check back on your Kafka Automation script.
+Recall above we advised you to check back in a few minutes on your Kafka automation script. Now is probably a good time to do that - as described here:
+[Confirm your Kafka installation](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup-v2.md#confirm-your-kafka-installation)
 
 
-## 6 - Setup Client Application to capture real-time images from your webcam
-
-# TODO - REPLACE WITH VIRTUAL BOX
-
-We need to set up the application on your laptop that captures images in realtime from your webcam and pushes them to the ***video-stream*** Kafka topic you created earlier - from which the inferencing application will pull them.
-
-Now change directory to the *event-producer* directory in the repo code cloned at the beginning.
-```
-cd $REPO_HOME/event-producer
-```
-
-The final thing you'll need to do before running your client is export five of ***YOUR_ENVIRONMENT_VARIABLES*** from above. Just place the export command in front of each and hit enter. 
-```
-export SASL_USERNAME="<SASL_USERNAME recorded above>"
-export SASL_PASSWORD="<SASL_PASSWORD recorded above>"
-export KAFKA_BROKER="<YOUR_KAFKA_BOOTSTRAP_SERVER recorded above>"
-```
-i.e. in my case:
-![images/2-setup/image35.png](images/2-setup/image35.png)
-
-Now your client is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
 
 
-## 7 - Configure your OpenShift inference application to pull images from RHOSAK and make realtime predictions
+
+
+
+
+
+## 6 - Verify your OpenShift inference application to pull images from RHOSAK and make realtime predictions
 
 We have a simple OpenShift based application that 
 - pulls images from our video-stream Kafka topic we set up earlier
 - for each one, it calls the Model via the MODEL_URL value above (always http://model-1-pred-demo:8000/api/v1.0/predictions) for a prediction on what the image contains
 - writes the count of what it found out to our Object Storage Minio
   
-We simply need to configure it ***YOUR_ENVIRONMENT_VARIABLES*** that you set up previously.
+We configured it ***YOUR_ENVIRONMENT_VARIABLES*** that you set up previously.
 
-On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see placeholders for these 4 values (i.e.  ***YOUR_ENVIRONMENT_VARIABLES*** above). Fill them in and **Save the file** (e.g. as shown with mine - obviously your actual values will be different).
-![images/2-setup/image36.png](images/2-setup/image36.png)
+On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see ......
+
+# TODO MOVE TO RUNNING DOCS
 
 ## 8 - Configure your simple HTML dashboard that records a count of the objects it sees
 
