@@ -82,7 +82,6 @@ and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***v
 - Select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu
 - Click Details: 
 ![images/2-setup/image7.png](images/2-setup/image7.png)
-
 - Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_KAFKA_BOOTSTRAP_SERVER (in my case *tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443*)
 ![images/2-setup/image8.png](images/2-setup/image8.png)
 
