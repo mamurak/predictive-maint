@@ -60,12 +60,23 @@ Shortly after, your virtual machine will be available. Click **Start**
 Enlarge the window and login using the default username ***redhat*** and the password also ***redhat***
 
 You'll see a screen like this. Click the *App Launcher* menu on the bottom. If you don't see it click *Activities* on top.
+![images/2-setup/image49.png](images/2-setup/image49.png)
 
-Open a terminal in the virtual box. 
-# TODO INSTRUCTIONS TO GET A COMMAND WINDOW IN THE VIRTUAL BOX
+Click **terminal**
+![images/2-setup/image50.png](images/2-setup/image50.png)
 
+The Github repository containing this documentaion you're reading as well as all source code, scripts, yaml that you will need.
+We have already cloned this repository into the VM, so you'll just to change directory to it. We'll also set a variable to refer to this directory ***REPO_HOME***. Run the following inside the terminal window:
+```
+cd predictive-maint
+export REPO_HOME=`pwd`
+```
+***Note - if you want to paste commands from this document to the terminal use this keyboard shortcut***
+```
+SHIFT + CONTROL + v
+```
 
-## 2 - Download this Github repository, for your source code, scripts, yaml etc
+## 2 - Download this Github repository, for your 
 
 Using the example below:   
 1. Clone (or fork) this repo.
