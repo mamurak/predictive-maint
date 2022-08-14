@@ -51,6 +51,14 @@ On your laptop, open Virtual Box. A screen like this will appear. Click **Import
 On the next screen click **Continue**
 ![images/2-setup/image46.png](images/2-setup/image46.png)
 
+On the following screen, appept the defaults and click **Import**
+![images/2-setup/image47.png](images/2-setup/image47.png)
+
+Shortly after, your virtual machine will be available. Click **Start**
+![images/2-setup/image48.png](images/2-setup/image48.png)
+
+Enlarge the window and login using the default username ***redhat*** and the password also ***redhat***
+
 
 Open a terminal in the virtual box. 
 # TODO INSTRUCTIONS TO GET A COMMAND WINDOW IN THE VIRTUAL BOX
