@@ -95,31 +95,24 @@ You'll be prompted login to your Red Hat Account (you set up previously). A conf
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
 This script will take several minutes to complete. Keep the terminal open, allowing it to continue the Kafka configuration. 
-Feel free to move to the section below ***4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)*** - and come back to the script after 6-7 minutes
+Feel free to continue from the section below ***3 - Login to OpenShift and select your OpenShift project*** - and come back to the script after 6-7 minutes
 
 
 #### Confirm your Kafka installation
 Come back in 10 minutes to check it has completed successfully.
 i.e. do the following:
-- Scan your terminal output - it should have run to completion with no errors.
-- You'll need to record 2 items of data in your terminal output. Towards the end of the output, just before the section ***The following ACL rules will be created***, your client id and secret appear. Copy these 2 items - we'll refer to them as ***SASL_USERNAME*** and ***SASL_PASSWORD*** below. ![images/2-setup/image0-5-get-client-id-secret.png](images/2-setup/image0-5-get-client-id-secret.png)
+- Scan your terminal output - it should have run to completion with no errors. The end should look something like this if it was successful:
+![images/2-setup/image52.png](images/2-setup/image52.png)
+
 - navigate to [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)
-and drill into your new ***kafka-rocks*** Kafka cluster and see a new Topic ***video-stream***, and configuration under the Access tab have been added.
+and you should see a new Kafka cluster called  ***kafka-rocks*** created.
 
 
-#### Get your Kafka Bootstrap server details
-
-- Navigate to **Application and Data Services > Streams for Kafka > Kafka Instances**, (or just hit [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)). 
-- Select the Kafka instance you created earlier (in my case tom-kafka), select the Kebab menu
-- Click Details: 
-![images/2-setup/image7.png](images/2-setup/image7.png)
-- Click the Connection tab and copy your *Bootstrap server*. We'll refer to this below as YOUR_KAFKA_BOOTSTRAP_SERVER (in my case *tom-kafka-cbdk-spfgjklbiqle--a.bf2.kafka.rhcloud.com:443*)
-![images/2-setup/image8.png](images/2-setup/image8.png)
 
 
-## 4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
+## 3 - Login to OpenShift and select your OpenShift project
 
-#### Login to your OpenShift cluster 
+#### Login to your OpenShift cluster using both browser and terminal
 1. Log on to OpenShift - by hitting the URL ***OPENSHIFT_CLUSTER_URL*** you got off the Web Meeting Chat earlier. You'll see this screen. Click **openshift-users** 
 ![images/2-setup/image40.png](images/2-setup/image40.png)
 2. Enter these values and click **Log On**   
@@ -141,19 +134,28 @@ Separately, keep a note of the 2 values for
      - OPENSHIFT_API_LOGIN_SERVER
    You'll need them for the training demo/workshop below
 
-7. Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning
+7. Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning.
 
-#### Install the Seldon Deployment
-
-Seldon is an awesome tool to expose the model behind a RESTful API.
-
-1. First you'll need to select your project inside the terminal window. Run the following replacing ***YOUR_OPENSHIFT_INFERENCE_PROJECT*** with yours
+#### Select your OpenShift project
+Now select your project inside the terminal window. Run the following replacing ***YOUR_OPENSHIFT_INFERENCE_PROJECT*** with yours
    ```
    oc project <insert YOUR_OPENSHIFT_INFERENCE_PROJECT here>
    ```
    i.e. in my case, as I'm user30:
 
 ![images/2-setup/image42.png](images/2-setup/image42.png) 
+
+Now on the OpenShift Web console (either within or outside your Virtual box VM), navigate to Home > Projects and click ***YOUR_OPENSHIFT_INFERENCE_PROJECT***, in my case *a-predictive-maint-user30*
+![images/2-setup/image53.png](images/2-setup/image53.png) 
+
+
+## 4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
+
+#### Install the Seldon Deployment
+
+Seldon is an awesome tool to expose the model behind a RESTful API.
+
+1. First you'll need to 
 
 2. Run the following
   ```
@@ -304,3 +306,15 @@ i.e. replace ***CHANGE_ME_FULL_MINIO_API_ROUTE*** with your ***FULL_MINIO_API_RO
 
 
 Now your inference application is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
+
+
+
+
+
+
+
+
+
+
+https://github.com/odh-labs/predictive-maint/blob/main/deploy/consumer-deployment.yaml#L49-L54
+
