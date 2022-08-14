@@ -21,7 +21,7 @@ This virtual machine, contains all of the libraries, binaries, command line inte
 - retrieve images from your webcam feed in realtime and push them to your Kafka Streaming service
 
 Hit this URL to download the virtual box
-# TODO ADD DROPBOX URL
+[https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0](https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0)
 
 Delpending on your internet speead, this can take several minuites. Once it's complete unzip the file.
 
@@ -149,53 +149,21 @@ Now on the OpenShift Web console (either within or outside your Virtual box VM),
 ![images/2-setup/image53.png](images/2-setup/image53.png) 
 
 
-## 4 - Configure OpenShift based object storage (Minio) and model serving (Seldon)
+## 4 - Configure OpenShift's model serving compnent (Seldon) and based object storage (Minio) 
 
 #### Install the Seldon Deployment
 
 Seldon is an awesome tool to expose the model behind a RESTful API.
 
-1. First you'll need to 
-
-2. Run the following
+1. In your terminal, run the following
   ```
    oc apply -f $REPO_HOME/deploy/Seldon-Deployment.yaml
    ```
 
-3. Now let's verify this Seldon deployment you just did on the OpenShift web console. First, click your new project on the GUI
-![images/2-setup/image21.png](images/2-setup/image21.png)
-
-
-
-
-# TODO - RESUME HERE
-
-
-
-
-
-3. Click **Operators > Operator Hub** (ensuring your project is selected on top - though ypur project name will probably be different)
-   ![images/2-setup/image22.png](images/2-setup/image22.png)
-   OpenShift displays the operator catalogue.  
-4.  Click the *Filter by keybord* text box and type *seldon*  
-   OpenShift displays the *Seldon* tile.
-5. Click the **Community Seldon Operator**  
-   OpenShift displays a Commmunity Operator warning dialog box.
-   ![images/2-setup/image23.png](images/2-setup/image23.png)
-6. Click **Continue**  
-   OpenShift displays a community operator warning. Accept it by clicking *Continue*.
-7. OpenShift displays the operator details. Click **Install**   
- ![images/2-setup/image24.png](images/2-setup/image24.png)     
-8. OpenShift prompts for the operator configuration details. Accept all defaults and click **Install**\
- ![images/2-setup/image25.png](images/2-setup/image25.png)
-   OpenShift installs the operator and displays a confirmation box once complete a few minutes later.  
-9. Click **Installed Operators**, ensuring your new project is selected on top. See the installation has succeeded. Click **Seldon Operator** 
+2. Navigate to **Operator Hub > Installed Operators**. Click **Seldon Operator** 
  ![images/2-setup/image26.png](images/2-setup/image26.png)
 
-10. Click **Seldon Deployment** then **Create Seldon Deployment**
- ![images/2-setup/image27.png](images/2-setup/image27.png)
-
-11. On your laptop (or wherever you cloned this repositiory above), navigate to and copy the entire contents of the file **deploy > Seldon-Deployment.yaml**
+3. Click **Seldon Deployment** and notice there is a new one called ***model-1*** whose status is ***Creating***. Come back to this in a few minutes and it should have changed to ***Available***
  ![images/2-setup/image28.png](images/2-setup/image28.png)
 
 12. Back on OpenShift, choose **YAML view** and replace the default YAML with what you copied in the previous step. Click **Create**
