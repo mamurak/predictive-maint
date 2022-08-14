@@ -63,6 +63,11 @@ The Open Data Hub Operator is now installed.
 The Seldon Operator is now installed. 
 
 
+## Login to you OpenShift cluster using the *Copy Login Command* facility.
+![images/2-setup/image43.png](images/2-setup/image43.png)
+  
+
+
 ## Configure and Add Workshop users
 
 In this section, we'll configure 30 users. Modify script if you need a different number of users.
