@@ -116,7 +116,7 @@ We have a simple OpenShift based application that you will run shortly which
 - for each one, it calls the Model for a prediction on what each image contains
 - writes the count of what it found out to our Object Storage Minio
   
-In the ***kafka.sh*** automation script we ran earlier, we configured it with various value relating to your Kafka installation. [This link shows you the original part of consumer-deployment.yaml] before we substitued those values(https://github.com/odh-labs/predictive-maint/blob/main/deploy/consumer-deployment.yaml#L49-L54). Notice we have 3 placeholders:
+In the ***kafka.sh*** automation script we ran earlier, we configured it with various value relating to your Kafka installation. [This link shows you the original part of consumer-deployment.yaml](https://github.com/odh-labs/predictive-maint/blob/main/deploy/consumer-deployment.yaml#L49-L54) before we substitued those values. Notice we have 3 placeholders:
 ![images/2-setup/image58.png](images/2-setup/image58.png)
 
 These 3 placeholders should have ***your values*** in your onsumer-deployment.yaml
