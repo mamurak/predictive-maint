@@ -13,17 +13,26 @@ brew install --cask virtualbox-extension-pack
 ```
 
 ### Prerequisite 2 - Download and unzip the edge-based virtual box for this workshop. 
-This virtual machine, contains all of the libraries, binaries, command line interfaces etc, that you'll need to 
+We've created a virtual machine (VM) you'll run in VirtualBox. It contains all of the libraries, binaries, command line interfaces etc, that you'll need to 
 - interact with, setup and configure your Kafka Streaming service
 - interact with, setup and configure your OpenShift based applications, which will - 
   - make the inference calls to the AI prediction service using pulled in realtime from your Kafka Streaming service
   - push the results to your own OpenShift based Object Store S3 implemenation
 - retrieve images from your webcam feed in realtime and push them to your Kafka Streaming service
 
-Hit this URL to download the virtual box
+Hit this URL to download this virtual box
 [https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0](https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0)
 
-Delpending on your internet speead, this can take several minuites. Once it's complete unzip the file.
+You will be prompted to login. It's not required, just click the **X** to close the dialog:
+![images/2-setup/image60.png](images/2-setup/image60.png)
+
+Then click download:
+![images/2-setup/image61.png](images/2-setup/image61.png)
+
+
+Depending on your internet speead, this can take several minuites. 
+
+Once it's complete unzip the file - by double clicking on it...
 
 ### Prerequisite 3 - a Red Hat Account
 Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
@@ -223,7 +232,14 @@ Recall above we advised you to check back in a few minutes on your Kafka automat
 Now your inference application is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
 
 
+
+
+
+
 # TODO REMOVE ALL AFTER HERE
+
+
+
 
 
 
