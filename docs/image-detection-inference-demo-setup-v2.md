@@ -157,14 +157,13 @@ It should look something like this - though your values will be different:
 ![images/2-setup/image17.png](images/2-setup/image17.png)
 5. Click your username on the top right of the screen, then click *Copy Login Command*
 ![images/2-setup/image18.png](images/2-setup/image18.png)
-6.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
 
-Separately, keep a note of the 2 values for
+Keep a note of the 2 values for
      - OPENSHIFT_API_LOGIN_TOKEN
      - OPENSHIFT_API_LOGIN_SERVER
    You'll need them for the training demo/workshop later on
 
-7. Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning.
+1. Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning.
 
 ![images/2-setup/image19.png](images/2-setup/image19.png)
 
