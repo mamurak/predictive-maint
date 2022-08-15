@@ -164,13 +164,15 @@ It should look something like this - though your values will be different:
 5. Click your username on the top right of the screen, then click *Copy Login Command*
 ![images/2-setup/image18.png](images/2-setup/image18.png)
 6.  Login again with your credentials, Click **Display Token**, copy and paste the token into a terminal window (accepting any insecurity warning)
-![images/2-setup/image19.png](images/2-setup/image19.png)
+
 Separately, keep a note of the 2 values for
      - OPENSHIFT_API_LOGIN_TOKEN
      - OPENSHIFT_API_LOGIN_SERVER
-   You'll need them for the training demo/workshop below
+   You'll need them for the training demo/workshop later on
 
 7. Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning.
+
+![images/2-setup/image19.png](images/2-setup/image19.png)
 
 #### Select your OpenShift project
 Now select your project inside the terminal window. Run the following replacing ***YOUR_OPENSHIFT_INFERENCE_PROJECT*** with yours
