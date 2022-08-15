@@ -158,7 +158,7 @@ It should look something like this - though your values will be different:
 5. Click your username on the top right of the screen, then click *Copy Login Command*
 ![images/2-setup/image18.png](images/2-setup/image18.png)
 
-Log in and click Display Token. 
+Log in and click **Display Token**. 
 
 
 Keep a note of the 2 values for
