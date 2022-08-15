@@ -221,7 +221,7 @@ Seldon is an awesome tool to expose an AI model behind a RESTful API.
  ![images/2-setup/image56.png](images/2-setup/image56.png)
 
    1. Copy the API one and paste it somewhere for later. We'll refer to this as your ***FULL_MINIO_API_ROUTE***.
-   2. Open the UI one - by clicking on the URL under *Location*. Log in using username/password ***minio*** and ***minio123***. You'll see a bucket called *image-prediction*
+   2. Open the UI one - by clicking on the URL under *Location*. Log in using username/password ***minio*** and ***minio123***. You'll see a bucket called *image-prediction*. Here we'll keep a count of the the number of objects the model detected in the streaming feed.
    ![images/2-setup/image57.png](images/2-setup/image57.png)
 
 
