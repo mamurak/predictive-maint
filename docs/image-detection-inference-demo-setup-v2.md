@@ -187,7 +187,7 @@ Now on the OpenShift Web console (either within or outside your Virtual box VM),
 ![images/2-setup/image53.png](images/2-setup/image53.png) 
 
 
-## 4 - Configure OpenShift's model serving compnent (Seldon) and based object storage (Minio) 
+## 4 - Configure OpenShift's model serving component (Seldon) and based object storage (Minio) 
 
 #### Install the Seldon Deployment
 
