@@ -15,10 +15,10 @@ The files view will open.
 Click into **predictive-maint** then into **deploy**. Double click on ***show_data.html*** 
 ![images/3-inference-demo/image9.png](images/3-inference-demo/image9.png)
 
-That HTML file will open in Firefox. 
+That HTML file will open in Firefox. Resize Firefox and your terminal so they are both visible 
 ![images/3-inference-demo/image10.png](images/3-inference-demo/image10.png)
 
-You'll recall earlier, on OpenShift you retrieved your ***FULL_MINIO_API_ROUTE*** - the value beside ***1*** here:
+Now, you'll need to paste the address of your Minio API object storage storage into the textbox on the html file. You'll recall earlier, on OpenShift you retrieved your ***FULL_MINIO_API_ROUTE*** - the value beside ***1*** here:
  ![images/2-setup/image56.png](images/2-setup/image56.png)
 
 Copy that ***FULL_MINIO_API_ROUTE*** value again.
@@ -26,7 +26,9 @@ Copy that ***FULL_MINIO_API_ROUTE*** value again.
 Now open ***show_data.html*** again. If it's disappeared off screen hit ***Activities*** then click ***Firefox***
 ![images/3-inference-demo/image12.png](images/3-inference-demo/image12.png)
 
-Paste your ***FULL_MINIO_API_ROUTE*** into the text box then click **Start Fetching**
+Paste your ***FULL_MINIO_API_ROUTE*** into the text box. Ensure you remove a trailing slash if it has one.
+
+***DON'T CLICK the Start Fetching button yet***.
 
 ## 2 - Run the OpenShift inference application to pull images from Kafka and make realtime predictions
 
