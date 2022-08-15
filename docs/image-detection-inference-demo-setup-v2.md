@@ -1,7 +1,7 @@
 # Setting up the Inference Demo
 
 
-### Prerequisite 1 - Install Virtual B and its extension pack.
+### Prerequisite 1 - Install Virtual Box and its extension pack.
 Instructions to do it are contained on the [Virtual Box Download page](https://www.virtualbox.org/wiki/Downloads).
 If you are using a Mac and have *Homebrew* installed, these commands are a quick way to do it:
 ```
@@ -24,7 +24,8 @@ Hit this URL to download this virtual box
 [https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0](https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0)
 
 You will be prompted to login. It's not required, just click the **X** to close the dialog:
-![images/2-setup/image60.png](images/2-setup/image60.png)
+<img src="images/2-setup/image60.png" width="200" height="400" />
+
 
 Then click download:
 ![images/2-setup/image61.png](images/2-setup/image61.png)
