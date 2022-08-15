@@ -54,7 +54,7 @@ On your laptop, open Virtual Box. A screen like this will appear. Click **Import
 ![images/2-setup/image44.png](images/2-setup/image44.png)
 - keep the source *Local File System*
 - click the file icon
-- navigate to where you unzipped the virtual box earlier
+- navigate to where you unzipped the VM earlier
 - select the ***ovf*** file
 - click Open
 ![images/2-setup/image45.png](images/2-setup/image45.png)
@@ -112,8 +112,8 @@ Feel free to continue from the section below
 
 
 ### Confirm your Kafka installation
-Come back in 5-7 minutes to check it has completed successfully.
-i.e. do the following:
+After 5-7 mins, your ***kafka.sh*** script should have completed successfully.
+Verify it by doing the following:
 - Scan your terminal output - it should have run to completion with no errors. The end should look something like this if it was successful:
 ![images/2-setup/image52.png](images/2-setup/image52.png)
 
@@ -124,14 +124,14 @@ and you should see a new Kafka cluster called  ***kafka-rocks*** created.
 
 #### Verify your ***consumer-deployment.yaml*** file. 
 We have a simple OpenShift based application that you will run shortly which
-- pulls images from our video-stream Kafka topic we set up earlier
-- for each one, it calls the Model for a prediction on what each image contains
+- pulls images from our video-stream Kafka topic
+- for each one, it calls the AI model for a prediction on what each image contains
 - writes the count of what it found out to our Object Storage Minio
   
-In the ***kafka.sh*** automation script we ran earlier, we configured it with various value relating to your Kafka installation. [This link shows you the original part of consumer-deployment.yaml](https://github.com/odh-labs/predictive-maint/blob/main/deploy/consumer-deployment.yaml#L49-L54) before we substitued those values. Notice we have 3 placeholders:
+In the ***kafka.sh*** automation script we ran earlier, we configured ***consumer-deployment.yaml*** with various values relating to your Kafka installation. [This link shows you the original part of consumer-deployment.yaml](https://github.com/odh-labs/predictive-maint/blob/main/deploy/consumer-deployment.yaml#L49-L54) before we substitued those values. Notice we have 3 placeholders:
 ![images/2-setup/image58.png](images/2-setup/image58.png)
 
-These 3 placeholders should have ***your values*** in your consumer-deployment.yaml
+These 3 placeholders in your consumer-deployment.yaml should ***now have your values*** 
 ```
 SASL_USERNAME_VALUE
 SASL_PASSWORD_VALUE
@@ -141,7 +141,7 @@ To verify this has been successful, run the following and navigate down to lines
 ```
 cat $REPO_HOME/deploy/consumer-deployment.yaml
 ```
-The 3 placeholders should now have substitutions (though your actual values will be different)
+It should look something like this - though your values will be different:
 ![images/2-setup/image59.png](images/2-setup/image59.png)
 
 
