@@ -98,15 +98,40 @@ This script will take several minutes to complete. Keep the terminal open, allow
 Feel free to continue from the section below ***3 - Login to OpenShift and select your OpenShift project*** - and come back to the script after 6-7 minutes
 
 
-#### Confirm your Kafka installation
-Come back in 10 minutes to check it has completed successfully.
+### Confirm your Kafka installation
+Come back in 5-7 minutes to check it has completed successfully.
 i.e. do the following:
 - Scan your terminal output - it should have run to completion with no errors. The end should look something like this if it was successful:
 ![images/2-setup/image52.png](images/2-setup/image52.png)
 
+#### Verify creation of your cloud based Kafka service (RHOASAK)
 - navigate to [https://console.redhat.com/application-services/streams/kafkas](https://console.redhat.com/application-services/streams/kafkas)
 and you should see a new Kafka cluster called  ***kafka-rocks*** created.
 
+
+#### Verify your ***consumer-deployment.yaml*** file. 
+We have a simple OpenShift based application that you will run shortly which
+- pulls images from our video-stream Kafka topic we set up earlier
+- for each one, it calls the Model for a prediction on what each image contains
+- writes the count of what it found out to our Object Storage Minio
+  
+In the ***kafka.sh*** automation script we ran earlier, we configured it with various value relating to your Kafka installation. [This link shows you the original](https://github.com/odh-labs/predictive-maint/blob/main/deploy/consumer-deployment.yaml#L49-L54). Notice we have 3 placeholders:
+![images/2-setup/image58.png](images/2-setup/image58.png)
+
+These 3 placeholders should have ***your values*** in your onsumer-deployment.yaml
+```
+SASL_USERNAME_VALUE
+SASL_PASSWORD_VALUE
+KAFKA_BROKER_VALUE
+```
+To verify this has been successful, run the following and navigate down to lines 49-54.
+```
+cat $REPO_HOME/deploy/consumer-deployment.yaml
+```
+The 3 placeholders should now have substitutions (though your actual values will be different)
+![images/2-setup/image59.png](images/2-setup/image59.png)
+
+On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see ......
 
 
 
@@ -192,11 +217,12 @@ Seldon is an awesome tool to expose the model behind a RESTful API.
    ![images/2-setup/image57.png](images/2-setup/image57.png)
 
 
-### Check back on your Kafka Automation script.
-Recall above we advised you to check back in a few minutes on your Kafka automation script. Now is probably a good time to do that - as described here:
-[Confirm your Kafka installation](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup-v2.md#confirm-your-kafka-installation)
+## 5 - Check back on your Kafka Automation script.
+Recall above we advised you to check back in a few minutes on your Kafka automation script. Now is probably a good time to do that - as described above at ***Confirm your Kafka installation***
 
 
+## 6 - Setup Complete
+Now your inference application is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
 
 
 
