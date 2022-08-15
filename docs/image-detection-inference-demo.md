@@ -26,7 +26,7 @@ Copy that ***FULL_MINIO_API_ROUTE*** value and paste into the textbox on the ***
 ***DON'T CLICK the Start Fetching button yet***.
 
 ## 2 - Give the VM permissions to access your webcam.
-On the VM menu, navigate to **Devices > Webcams** and click on the webcam you wish to use to generate the images
+On the Virtual Box menu, navigate to **Devices > Webcams** and click on the webcam you wish to use to generate the images:
  ![images/3-inference-demo/image14.png](images/3-inference-demo/image14.png)
 
 
