@@ -21,12 +21,7 @@ That HTML file will open in Firefox. Resize Firefox and your terminal so they ar
 Now, you'll need to paste the address of your Minio API object storage storage into the textbox on the html file. You'll recall earlier, on OpenShift you retrieved your ***FULL_MINIO_API_ROUTE*** - the value beside ***1*** here:
  ![images/2-setup/image56.png](images/2-setup/image56.png)
 
-Copy that ***FULL_MINIO_API_ROUTE*** value again.
-
-Now open ***show_data.html*** again. If it's disappeared off screen hit ***Activities*** then click ***Firefox***
-![images/3-inference-demo/image12.png](images/3-inference-demo/image12.png)
-
-Paste your ***FULL_MINIO_API_ROUTE*** into the text box. Ensure you remove a trailing slash if it has one.
+Copy that ***FULL_MINIO_API_ROUTE*** value and paste into the ***show_data.html*** file.
 
 ***DON'T CLICK the Start Fetching button yet***.
 
