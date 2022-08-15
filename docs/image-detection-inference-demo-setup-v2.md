@@ -132,13 +132,7 @@ In the ***kafka.sh*** automation script we ran earlier, we configured ***consume
 
 ![images/2-setup/image58.png](images/2-setup/image58.png)
 
-These 3 placeholders in your consumer-deployment.yaml should ***now have your values*** 
-```
-SASL_USERNAME_VALUE
-SASL_PASSWORD_VALUE
-KAFKA_BROKER_VALUE
-```
-To verify this has been successful, run the following and navigate down to lines 49-54.
+These 3 placeholders in your consumer-deployment.yaml should ***now have your values*** . To verify this has been successful, run the following and navigate down to lines 49-54.
 ```
 cat $REPO_HOME/deploy/consumer-deployment.yaml
 ```
