@@ -24,7 +24,8 @@ Hit this URL to download this virtual box
 [https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0](https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0)
 
 You will be prompted to login. It's not required, just click the **X** to close the dialog:
-<img src="images/2-setup/image60.png" width="200" height="400" />
+
+<img src="images/2-setup/image60.png" width="230" height="400" />
 
 
 Then click download:
