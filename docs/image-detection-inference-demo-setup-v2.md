@@ -223,7 +223,7 @@ Recall above we advised you to check back in a few minutes on your Kafka automat
 Now your inference application is ready. We'll use it in the next instruction file, [Run End to End Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo.md)
 
 
-
+# TODO REMOVE ALL AFTER HERE
 
 
 
@@ -239,7 +239,7 @@ We configured it ***YOUR_ENVIRONMENT_VARIABLES*** that you set up previously.
 
 On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see ......
 
-# TODO MOVE TO RUNNING DOCS
+
 
 ## 8 - Configure your simple HTML dashboard that records a count of the objects it sees
 
