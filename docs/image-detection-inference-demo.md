@@ -27,7 +27,7 @@ Copy that ***FULL_MINIO_API_ROUTE*** value and paste into the ***show_data.html*
 
 ## 2 - Run the OpenShift inference application to pull images from Kafka and make realtime predictions
 
-Run this on ***another*** terminal on your laptop
+Run this in the terminal in your VM.
 ```
 oc apply -f $REPO_HOME/deploy/consumer-deployment.yaml
 ```
