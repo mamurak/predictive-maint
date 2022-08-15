@@ -44,7 +44,8 @@ This application is pulling images off the Kakfa streaming service and for each 
 
 The default model, writes a count of the following:
 - the number of images it sees a ***person***, i.e. you
-- the number it sees soemthing else, we call those ***background***
+- the number it sees soemthing else, we call those ***background***.
+
 Of course, the model can be trained to detect other objects, machinery damage, cancerous cells etc. More on that in the next section of the workshop.
 
 
