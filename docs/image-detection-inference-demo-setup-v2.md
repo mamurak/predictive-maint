@@ -96,7 +96,8 @@ You'll be prompted login to your Red Hat Account (you set up previously). A conf
 ![images/2-setup/image0-4-Login-confirmation.png](images/2-setup/image0-4-Login-confirmation.png)
 
 This script will take several minutes to complete. Keep the terminal open, allowing it to continue the Kafka configuration. 
-Feel free to continue from the section below ***3 - Login to OpenShift and select your OpenShift project*** - and come back to the script after 6-7 minutes
+Feel free to continue from the section below 
+***3 - Login to OpenShift and select your OpenShift project*** - and come back to the script after 6-7 minutes
 
 
 ### Confirm your Kafka installation
@@ -119,7 +120,7 @@ We have a simple OpenShift based application that you will run shortly which
 In the ***kafka.sh*** automation script we ran earlier, we configured it with various value relating to your Kafka installation. [This link shows you the original part of consumer-deployment.yaml](https://github.com/odh-labs/predictive-maint/blob/main/deploy/consumer-deployment.yaml#L49-L54) before we substitued those values. Notice we have 3 placeholders:
 ![images/2-setup/image58.png](images/2-setup/image58.png)
 
-These 3 placeholders should have ***your values*** in your onsumer-deployment.yaml
+These 3 placeholders should have ***your values*** in your consumer-deployment.yaml
 ```
 SASL_USERNAME_VALUE
 SASL_PASSWORD_VALUE
@@ -131,9 +132,6 @@ cat $REPO_HOME/deploy/consumer-deployment.yaml
 ```
 The 3 placeholders should now have substitutions (though your actual values will be different)
 ![images/2-setup/image59.png](images/2-setup/image59.png)
-
-On your laptop, open the file *consumer-deployment.yaml* in the in *deploy* directory the repo code cloned at the beginning. Move down to line 45 where you'll see ......
-
 
 
 ## 3 - Login to OpenShift and select your OpenShift project
