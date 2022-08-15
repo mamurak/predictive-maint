@@ -15,27 +15,20 @@ The files view will open.
 Click into **predictive-maint** then into **deploy**. Double click on ***show_data.html*** 
 ![images/3-inference-demo/image9.png](images/3-inference-demo/image9.png)
 
-
-That HTML file will open in Firefox. We'll come back to that later.
+That HTML file will open in Firefox. 
 ![images/3-inference-demo/image10.png](images/3-inference-demo/image10.png)
 
+You'll recall earlier, on OpenShift you retrieved your ***FULL_MINIO_API_ROUTE*** - the value beside ***1*** here:
+ ![images/2-setup/image56.png](images/2-setup/image56.png)
 
-## 2 - Run the Edge (VM based) Application to capture real-time images from your webcam
+Copy that ***FULL_MINIO_API_ROUTE*** value again.
 
-We're about to run an application inside the VM on your laptop that uses your webcam to pull images it sees and send them to Kafka. Go to the terminal inside your VM and run the following
-```
-cd $REPO_HOME/event-producer
-go run .
-```
-![images/3-inference-demo/image1.png](images/3-inference-demo/image1.png)
+Now open ***show_data.html*** again. If it's disappeared off screen hit ***Activities*** then click ***Firefox***
+![images/3-inference-demo/image12.png](images/3-inference-demo/image12.png)
 
-This will immediately start pulling images from your webcam and sending them to Kafka. You'll see something like this on your terminal
+Paste your ***FULL_MINIO_API_ROUTE*** into the text box then click **Start Fetching**
 
-![images/3-inference-demo/image6.png](images/3-inference-demo/image6.png)
-
-Keep youself visible to the webcam for now
-
-## 2 - Running the OpenShift inference application to pull images from Kafka and make realtime predictions
+## 2 - Run the OpenShift inference application to pull images from Kafka and make realtime predictions
 
 Run this on ***another*** terminal on your laptop
 ```
@@ -52,16 +45,24 @@ The default model, writes a count of the following:
 - the number it sees soemthing else, we call those ***background***
 Of course, the model can be trained to detect other objects, machinery damage, cancerous cells etc. More on that in the next section of the workshop.
 
+
+## 3 - Run the Edge (VM based) Application to capture real-time images from your webcam
+
+We're about to run an application inside the VM on your laptop that uses your webcam to pull images it sees and send them to Kafka. Go to the terminal inside your VM and run the following
+```
+cd $REPO_HOME/event-producer
+go run .
+```
+![images/3-inference-demo/image1.png](images/3-inference-demo/image1.png)
+
+This will immediately start pulling images from your webcam and sending them to Kafka. You'll see something like this on your terminal
+
+![images/3-inference-demo/image6.png](images/3-inference-demo/image6.png)
+
+Keep youself visible to the webcam for now
+
 ## 3 - Get ***show_data.html*** file to report on images
-You'll recall earlier, on OpenShift you retrieved your ***FULL_MINIO_API_ROUTE*** - the value beside ***1*** here:
- ![images/2-setup/image56.png](images/2-setup/image56.png)
 
-Copy that ***FULL_MINIO_API_ROUTE*** value again.
-
-Now open ***show_data.html*** again. If it's disappeared off screen hit ***Activities*** then click ***Firefox***
-![images/3-inference-demo/image12.png](images/3-inference-demo/image12.png)
-
-Paste your ***FULL_MINIO_API_ROUTE*** into the text box then click **Start Fetching**
 
 In a few seconds, you'll see the value of ***Person*** increasing. As soon as you do, put your hand in front of your webcam, so it can't see you. Within a few seconds, the object increasing should change from ***Person*** to ***Background***
 
