@@ -21,11 +21,16 @@ That HTML file will open in Firefox. Resize Firefox and your terminal so they ar
 Now, you'll need to paste the address of your Minio API object storage storage into the textbox on the html file. You'll recall earlier, on OpenShift you retrieved your ***FULL_MINIO_API_ROUTE*** - the value beside ***1*** here:
  ![images/2-setup/image56.png](images/2-setup/image56.png)
 
-Copy that ***FULL_MINIO_API_ROUTE*** value and paste into the ***show_data.html*** file.
+Copy that ***FULL_MINIO_API_ROUTE*** value and paste into the textbox on the ***show_data.html*** file.
 
 ***DON'T CLICK the Start Fetching button yet***.
 
-## 2 - Run the OpenShift inference application to pull images from Kafka and make realtime predictions
+## 2 - Give the VM permissions to access your webcam.
+On the VM menu, navigate to **Devices > Webcams** and click on the webcam you wish to use to generate the images
+ ![images/3-inference-demo/image14.png](images/3-inference-demo/image14.png)
+
+
+## 3 - Run the OpenShift inference application to pull images from Kafka and make realtime predictions
 
 Run this in the terminal in your VM.
 ```
@@ -50,18 +55,18 @@ We're about to run an application inside the VM on your laptop that uses your we
 cd $REPO_HOME/event-producer
 go run .
 ```
-![images/3-inference-demo/image1.png](images/3-inference-demo/image1.png)
-
-This will immediately start pulling images from your webcam and sending them to Kafka. You'll see something like this on your terminal
-
-![images/3-inference-demo/image6.png](images/3-inference-demo/image6.png)
-
-Keep youself visible to the webcam for now
 
 ## 3 - Get ***show_data.html*** file to report on images
 
+Keep youself visible to the webcam for now. Now click the **Start Fetching** button.
+![images/3-inference-demo/image15.png](images/3-inference-demo/image15.png)
 
-In a few seconds, you'll see the value of ***Person*** increasing. As soon as you do, put your hand in front of your webcam, so it can't see you. Within a few seconds, the object increasing should change from ***Person*** to ***Background***
+In a few seconds, you'll see the value of ***Person*** increasing with the value of *background* not changing. 
+![images/3-inference-demo/image16.png](images/3-inference-demo/image16.png)
+
+Next, put your hand in front of your webcam, so it can't see you. Within a few seconds, the converse  should happen - the object increasing should change to ***Background***
+![images/3-inference-demo/image17.png](images/3-inference-demo/image17.png)
+
 
 This is awesome - it's detecting in realtime what your webcam sees!
 
