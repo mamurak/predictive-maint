@@ -1,6 +1,6 @@
 # Running the Inference Demo
 
-Ensure you have setup this demo first, as instructed in [Setup Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup.md)
+Ensure you have setup this demo first, as instructed in [Setup Inference Demo](https://github.com/odh-labs/predictive-maint/blob/main/docs/image-detection-inference-demo-setup-v2.md)
 
 ## 1 - Run the Client Application to capture real-time images from your webcam
 
