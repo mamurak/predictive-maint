@@ -177,7 +177,7 @@ Now on the OpenShift Web console (either within or outside your Virtual box VM),
 
 #### Install the Seldon Deployment
 
-Seldon is an awesome tool to expose the model behind a RESTful API.
+Seldon is an awesome tool to expose an AI model behind a RESTful API.
 
 1. In your terminal, run the following
   ```
@@ -196,7 +196,6 @@ Seldon is an awesome tool to expose the model behind a RESTful API.
 
 ### Install Minio, our lightweight Object Storage implementation
 
-
 1. In your terminal window, type the following commands:
    ```
    oc apply -f $REPO_HOME/deploy/minio-full.yaml
@@ -204,7 +203,7 @@ Seldon is an awesome tool to expose the model behind a RESTful API.
    You should be informed of a series of Kubernetes object creations.
 
 2. Now switch to your OpenShift web console again. Navigate to **Workloads > Pods** and filter on *minio*. After a couple of minutes, you should see a running container like so. (ignore any temporary ***CrashBackoff*** status of the other pod).
- ![images/2-setup/image54.png](images/2-setup/image54.png)
+ ![images/2-setup/image55.png](images/2-setup/image55.png)
 
 3. Navigate to **Networking > Routes**. Notice there are 2 ***Minio*** routes    
    - one for the UI 
