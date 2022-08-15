@@ -166,7 +166,7 @@ Keep a note of the 2 values for
      - OPENSHIFT_API_LOGIN_SERVER
    You'll need them for the training demo/workshop later on
 
-1. Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning.
+Copy the entire ***oc login*** command as far as ***6443*** and paste into your terminal window inside virtual box. Accept the *insecurity* warning.
 
 ![images/2-setup/image19.png](images/2-setup/image19.png)
 
