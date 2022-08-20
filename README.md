@@ -8,7 +8,7 @@ The aim of this lab are as follows
 The application first collects data from the edge devices such as cameras and send the raw data to the AMQ Streams. A consumer to the stream will perform inference and generate alerts.
 Data Science team use the platform to build (and re-train) and deploy the model in self-serving fashion.
 # Technical Architecture
-![docs/images/1-main-readme/img.png](docs/images/1-main-readme/img_1.png)
+![docs/images/1-main-readme/technical-architecture.png](docs/images/1-main-readme/technical-architecture.png)
 
 
 
