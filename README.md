@@ -9,7 +9,7 @@ The application first collects data from the edge devices such as cameras and se
 Data Science team use the platform to build (and re-train) and deploy the model in self-serving fashion.
 # Technical Architecture
 
-<img src="./docs/images/1-main-readme/img.png alt="drawing" width="500"/>
+<img src="./docs/images/1-main-readme/img.png width="500" />
 
 
 
