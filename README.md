@@ -7,9 +7,12 @@ The aim of this lab are as follows
 - How different components works together to solve a business problem.
 The application first collects data from the edge devices such as cameras and send the raw data to the AMQ Streams. A consumer to the stream will perform inference and generate alerts.
 Data Science team use the platform to build (and re-train) and deploy the model in self-serving fashion.
-![docs/images/1-main-readme/img.png](docs/images/1-main-readme/img.png)
-
 # Technical Architecture
+
+<img src="docs/images/1-main-readme/img.png alt="drawing" width="500"/>
+
+
+
 ![docs/images/1-main-readme/img_1.png](docs/images/1-main-readme/img_1.png)
 
 # How to run this lab
