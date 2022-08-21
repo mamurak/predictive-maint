@@ -10,7 +10,18 @@
     var person = 0
 
     function start(){
-        minio_location = $('#minioserver').val()+/image-prediction/
+        
+        minio_location = $('#minioserver').val()
+        if (minio_location.substring(minio_location.length-1) == '/'){
+            minio_location = $('#minioserver').val()+'image-prediction/'
+            console.log('has slash')
+        }
+        else{
+            minio_location = $('#minioserver').val()+/image-prediction/
+            console.log('NO slash')
+        }
+        
+        
         setInterval(fetchData, 500);
     }
 
@@ -188,7 +199,7 @@
     <div class="row">
         <h3>Minio API URL</h3>
 
-        <input  id="minioserver" type="text" placeholder="Place Minio API URL Here - without ending slash" size="80"/>
+        <input  id="minioserver" type="text" placeholder="Place Minio API URL Here" size="80"/>
         <br>
         <input type="button" value="Start Fetching" onclick="start()"/>
     </div>
