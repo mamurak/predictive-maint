@@ -10,26 +10,11 @@
     var person = 0
 
     function start(){
-        
-        minio_location = $('#minioserver').val()
-        if (minio_location.substring(minio_location.length-1) == '/'){
-            minio_location = $('#minioserver').val()+'image-prediction/'
-            console.log('has slash')
-        }
-        else{
-            minio_location = $('#minioserver').val()+/image-prediction/
-            console.log('NO slash')
-        }
-        
-        
-        setInterval(fetchData, 500);
+        minio_location = $('#minioserver').val()+'image-prediction/'
+        setInterval(fetchData, 1000);
     }
 
     function fetchData(){
-        $.ajax({
-            url: minio_location +  'MidFinger.txt',
-            dataType: 'text',
-        }).done(successFunctionOne);
         $.ajax({
             url: minio_location +  'Person.txt',
             dataType: 'text',
@@ -71,16 +56,16 @@
 
 
 </script>
+<!--$.ajax({-->
+<!--url: minio_location +  'MidFinger.txt',-->
+<!--dataType: 'text',-->
+<!--}).done(successFunctionOne);-->
+
 <style>
     #minioserverdiv{
 
-    margin: 0 auto;
-    text-align: center;
-
-    }    #minioserverdiv2{
-
-    margin: 2 auto;
-    text-align: center;
+        margin: 0 auto;
+        text-align: center;
 
     }
 
@@ -169,54 +154,101 @@
     </div>
 </div>
 <hr>
-<!-- <div id="minioserverdiv">
-    <input id="minioserver" type="text" value="Type Minio Address Here - without ending slash" width="400px" />
-    <input type="button" value="Start Fetching" onclick="start()">
-</div> -->
-
-<!-- <div class="col-5">
-    
-       Minio API URL
-    <input  id="minioserver" type="text" placeholder="Place Minio API URL Here - without ending slash" size="40"/>
-    <input type="button" value="Start Fetching" onclick="start()"/>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-<br>
-
-
-
-<!-- <div class="container"> -->
-<div id="minioserverdiv2">
+<div id="minioserverdiv" class="col-5">
+    Minio API URL - including ending slash
     <div class="row">
-        <h3>Minio API URL</h3>
-
-        <input  id="minioserver" type="text" placeholder="Place Minio API URL Here" size="80"/>
-        <br>
-        <input type="button" value="Start Fetching" onclick="start()"/>
+        <input id="minioserver" type="text" placeholder="Put Minio Address Here - including slash" />
+        <input type="button" value="Start Fetching" onclick="start()">
     </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
 
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+
+<!--<script>-->
+<!--    function fetchData(){-->
+<!--        $.ajax({-->
+<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/MidFinger.txt',-->
+<!--            dataType: 'text',-->
+<!--        }).done(successFunctionOne);-->
+<!--        $.ajax({-->
+<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/Person.txt',-->
+<!--            dataType: 'text',-->
+<!--        }).done(successFunctionPerson);-->
+<!--        $.ajax({-->
+<!--            url: 'http://minio-ml-workshop-fmv3.apps.dbs-indo-1.apac-1.rht-labs.com/image-prediction/Background.txt',-->
+<!--            dataType: 'text',-->
+<!--        }).done(successFunctionBackground);-->
+
+<!--    }-->
+<!--    function successFunctionOne(data){-->
+<!--        // console.log(data)-->
+<!--        $('#one').empty().append(data)-->
+<!--    }-->
+<!--    function successFunctionPerson(data){-->
+<!--        $('#person').empty().append(data)-->
+<!--    }-->
+<!--    function successFunctionBackground(data){-->
+<!--        $('#background').empty().append(data)-->
+<!--    }-->
+
+<!--    function successFunction(data) {-->
+<!--        var allRows = data.split(/\r?\n|\r/);-->
+<!--        var table = '<table>';-->
+<!--        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {-->
+<!--            if (singleRow === 0) {-->
+<!--                table += '<thead>';-->
+<!--                table += '<tr>';-->
+<!--            } else {-->
+<!--                table += '<tr>';-->
+<!--            }-->
+<!--            var rowCells = allRows[singleRow].split(',');-->
+<!--            for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {-->
+<!--                if (singleRow === 0) {-->
+<!--                    table += '<th>';-->
+<!--                    table += rowCells[rowCell];-->
+<!--                    table += '</th>';-->
+<!--                } else {-->
+<!--                    table += '<td>';-->
+<!--                    table += rowCells[rowCell];-->
+<!--                    table += '</td>';-->
+<!--                }-->
+<!--            }-->
+<!--            if (singleRow === 0) {-->
+<!--                table += '</tr>';-->
+<!--                table += '</thead>';-->
+<!--                table += '<tbody>';-->
+<!--            } else {-->
+<!--                table += '</tr>';-->
+<!--            }-->
+<!--        }-->
+<!--        table += '</tbody>';-->
+<!--        table += '</table>';-->
+<!--        $('body').append(table);-->
+<!--    }-->
+
+<!--    setInterval(fetchData, 500);-->
+<!--</script>-->
+
+<!--<body>-->
+<!--<table>-->
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--        <td>One</td>-->
+<!--        <td id="one"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Person</td>-->
+<!--        <td id="person"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>Background</td>-->
+<!--        <td id="background"></td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+
+<!--</body>-->
