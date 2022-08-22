@@ -39,7 +39,7 @@ func processframes(ch chan<- gocv.NativeByteBuffer) {
 
 		if ok := webcam.Read(&img); !ok {
 			fmt.Printf("Device closed\n")
-			return
+			continue
 		}
 		//log.Println(" VDO Captur eloop .. Img Read")
 		if img.Empty() {
@@ -47,9 +47,9 @@ func processframes(ch chan<- gocv.NativeByteBuffer) {
 		}
 
 		skipcounter++
-		if skipcounter%5 != 0 {
+		if skipcounter%30 != 0 {
 			//log.Println(" VDO Captur eloop .. Skip Counter ... miss 5 frames")
-			//continue
+			continue
 		}
 		log.Println("VDO Capture Loop .... Resizing")
 
