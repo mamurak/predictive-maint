@@ -21,7 +21,7 @@ We've created a virtual machine (VM) you'll run in VirtualBox. It contains all o
 - retrieve images from your webcam feed in realtime and push them to your Kafka Streaming service
 
 Hit this URL to download this virtual box
-[https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0](https://www.dropbox.com/s/hd5mttb0spg2r3u/Fedora_VirtualBox_2.ova.zip?dl=0)
+[https://www.dropbox.com/s/o3tsofeix3eocj2/Fedora-VB3.ova?dl=0](https://www.dropbox.com/s/o3tsofeix3eocj2/Fedora-VB3.ova?dl=0)
 
 You will be prompted to login. It's not required, just click the **X** to close the dialog:
 
