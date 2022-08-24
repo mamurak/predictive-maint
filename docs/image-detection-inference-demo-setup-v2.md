@@ -51,7 +51,8 @@ OPENSHIFT CLUSTER URL
 Once these there are complete, you're ready to begin. 
 
 ## 1 - Open virtual box then open a terminal inside your virtual box. 
-On your laptop, open Virtual Box. A screen like this will appear. Click **Import**:
+On your laptop, open Virtual Box. A screen like this will appear. 
+Click **Import**:
 ![images/2-setup/image44.png](images/2-setup/image44.png)
 - keep the source *Local File System*
 - click the file icon
