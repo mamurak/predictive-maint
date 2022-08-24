@@ -146,9 +146,10 @@ It should look something like this - though your values will be different:
 #### Login to your OpenShift cluster using both browser and terminal
 1. Log on to OpenShift - by hitting the URL ***OPENSHIFT_CLUSTER_URL*** you got off the Web Meeting Chat earlier. You'll see this screen. Click **openshift-users** 
 ![images/2-setup/image40.png](images/2-setup/image40.png)
-2. Enter these values and click **Log On**   
+2. Enter these values    
    - ***YOUR OPENSHIFT USERNAME*** that you got earlier from your instructor
    - ***openshift*** for your password 
+3. Click **Log In**
  ![images/2-setup/image41.png](images/2-setup/image41.png) 
 
 
