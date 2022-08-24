@@ -43,7 +43,7 @@ Next, if you don't already have one, set up a free Red Hat Account - where the S
 ### Prerequisite 4 - an OpenShift cluster, a Username and an OpenShift project to work in
 You instrutor will supply these to you in the Web Meeting Chat. We'll refer to these below as
 ```
-YOUR OPENSHIFT PROJECT		
+YOUR OPENSHIFT INFERENCE PROJECT	
 YOUR OPENSHIFT USERNAME	
 YOUR OPENSHIFT PASSWORD
 OPENSHIFT CLUSTER URL
@@ -109,7 +109,7 @@ You'll be prompted login to your Red Hat Account (you set up previously). A conf
 
 This script will take several minutes to complete. Keep the terminal open, allowing it to continue the Kafka configuration. 
 Feel free to continue from the section below 
-***3 - Login to OpenShift and select your OpenShift project*** - and come back to the script after 6-7 minutes
+***3 - Login to OpenShift and select your YOUR OPENSHIFT INFERENCE PROJECT*** - and come back to the script after 6-7 minutes
 
 
 ### Confirm your Kafka installation
@@ -169,15 +169,15 @@ Copy the entire ***oc login*** command as far as ***6443*** and paste into your 
 ![images/2-setup/image19.png](images/2-setup/image19.png)
 
 #### Select your OpenShift project
-Now select your project inside the terminal window. Run the following replacing ***YOUR_OPENSHIFT_INFERENCE_PROJECT*** with yours
+Now select your project inside the terminal window. Run the following replacing ***YOUR OPENSHIFT INFERENCE PROJECT*** with yours
    ```
-   oc project <insert YOUR_OPENSHIFT_INFERENCE_PROJECT here>
+   oc project <insert YOUR OPENSHIFT INFERENCE PROJECT here>
    ```
    i.e. in my case, as I'm user30:
 
 ![images/2-setup/image42.png](images/2-setup/image42.png) 
 
-Now on the OpenShift Web console (either within or outside your Virtual box VM), navigate to Home > Projects and click ***YOUR_OPENSHIFT_INFERENCE_PROJECT***, in my case *a-predictive-maint-user30*
+Now on the OpenShift Web console (either within or outside your Virtual box VM), navigate to Home > Projects and click ***YOUR OPENSHIFT INFERENCE PROJECT***, in my case *a-predictive-maint-user30*
 ![images/2-setup/image53.png](images/2-setup/image53.png) 
 
 
