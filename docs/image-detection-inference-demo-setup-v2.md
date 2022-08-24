@@ -23,7 +23,7 @@ We've created a virtual machine (VM) you'll run in VirtualBox. It contains all o
 Hit this URL to download this virtual box
 [https://www.dropbox.com/s/o3tsofeix3eocj2/Fedora-VB3.ova?dl=0](https://www.dropbox.com/s/o3tsofeix3eocj2/Fedora-VB3.ova?dl=0)
 
-You will be prompted to login. It's not required, just click the **X** to close the dialog:
+You may be prompted to login. It's not required, just click the **X** to close the dialog:
 
 <img src="images/2-setup/image60.png" width="230" height="400" />
 
