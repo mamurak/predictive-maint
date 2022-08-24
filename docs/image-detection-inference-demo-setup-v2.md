@@ -43,9 +43,9 @@ Next, if you don't already have one, set up a free Red Hat Account - where the S
 ### Prerequisite 4 - an OpenShift cluster, a Username and an OpenShift project to work in
 You instrutor will supply these to you in the Web Meeting Chat. We'll refer to these below as
 ```
+YOUR OPENSHIFT PROJECT		
 YOUR OPENSHIFT USERNAME	
 YOUR OPENSHIFT PASSWORD
-YOUR OPENSHIFT PROJECT		
 OPENSHIFT CLUSTER URL
 ```
 Once these there are complete, you're ready to begin. 
