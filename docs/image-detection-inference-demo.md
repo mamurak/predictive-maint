@@ -21,9 +21,17 @@ That HTML file will open in Firefox. Resize Firefox and your terminal so they ar
 Now, you'll need to paste the address of your Minio API object storage storage into the textbox on the html file. You'll recall earlier, on OpenShift you retrieved your ***FULL_MINIO_API_ROUTE*** - the value beside ***1*** here:
  ![images/2-setup/image56.png](images/2-setup/image56.png)
 
-Copy that ***FULL_MINIO_API_ROUTE*** value and paste into the textbox on the ***show_data.html*** file.
+Copy that ***FULL_MINIO_API_ROUTE*** value and append ***image-prediction/*** to it so it should be something this
+```
+http://minio-ml-workshop-a-predictive-maint-admin.apps.rosa-sfqrc.6wjo.p1.openshiftapps.com/image-prediction/
+```
+
+
+Paste into the textbox on the ***show_data.html*** file.
 
 ***DON'T CLICK the Start Fetching button yet***.
+
+
 
 ## 2 - Give the VM permissions to access your webcam.
 On the Virtual Box menu, navigate to **Devices > Webcams** and click on the webcam you wish to use to generate the images:
