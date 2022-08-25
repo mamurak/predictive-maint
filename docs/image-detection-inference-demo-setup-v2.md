@@ -1,18 +1,7 @@
 # Setting up the Inference Demo
 
 
-### Prerequisite 1 - Install Virtual Box and its extension pack.
-Instructions to do it are contained on the [Virtual Box Download page](https://www.virtualbox.org/wiki/Downloads).
-If you are using a Mac and have *Homebrew* installed, these commands are a quick way to do it:
-```
-brew install --cask virtualbox
-```
-and then 
-```
-brew install --cask virtualbox-extension-pack
-```
-
-### Prerequisite 2 - Download and unzip the edge-based virtual box for this workshop. 
+### Prerequisite 1 - Download and unzip the edge-based virtual box for this workshop. 
 We've created a virtual machine (VM) you'll run in VirtualBox. It contains all of the libraries, binaries, command line interfaces etc, that you'll need to 
 - interact with, setup and configure your Kafka Streaming service
 - interact with, setup and configure your OpenShift based applications, which will - 
@@ -35,6 +24,20 @@ Then click download:
 Depending on your internet speead, this can take several minuites. 
 
 Once it's complete unzip the file - by double clicking on it...
+
+
+### Prerequisite 2 - Install Virtual Box and its extension pack.
+Instructions to do it are contained on the [Virtual Box Download page](https://www.virtualbox.org/wiki/Downloads). But in short:
+ - 1 - Download Virtual Box
+ - 2 - Download the extension pack
+ 
+ Then
+ - Install Virtual Box
+ - Grant access to vistual box to your camera, microphone etc
+ - Install the extension pack
+
+
+
 
 ### Prerequisite 3 - a Red Hat Account
 Next, if you don't already have one, set up a free Red Hat Account - where the SaaS service, Red Hat OpenShift Service for Apache Kafka (RHOASAK) is located. Do that at **https://console.redhat.com**. Logout
