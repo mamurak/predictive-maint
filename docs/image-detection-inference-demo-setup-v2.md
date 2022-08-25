@@ -36,6 +36,7 @@ Instructions to do it are contained on the [Virtual Box Download page](https://w
  - Grant access to vistual box to your camera, microphone etc
  - Install the extension pack
 
+![images/2-setup/image62.png](images/2-setup/image62.png)
 
 
 
