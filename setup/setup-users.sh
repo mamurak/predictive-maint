@@ -14,8 +14,8 @@ oc apply -f htpasswd-oauth.yaml
 oc rollout status deployment/oauth-openshift --watch=true -n openshift-authentication
 
 
-#for i in {1..30}
-for i in {30..30}
+for i in {1..30}
+#for i in {30..30}
 do
     oc new-project a-predictive-maint-user$i
     oc delete limits a-predictive-maint-user$i-core-resource-limits
